@@ -24,7 +24,7 @@ docker run -p 8080:8080 \
     -e KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL=SASL_SSL \
     -e KAFKA_CLUSTERS_0_PROPERTIES_SASL_MECHANISM=SCRAM-SHA-512 \     
     -e KAFKA_CLUSTERS_0_PROPERTIES_SASL_JAAS_CONFIG=org.apache.kafka.common.security.scram.ScramLoginModule required username="<KAFKA_USERNAME>" password="<KAFKA_PASSWORD>"; \
-    -d provectuslabs/kafka-ui:latest 
+    -d ghcr.io/kafbat/kafka-ui 
 ```
 
 #### Running From Docker-compose file
@@ -34,9 +34,9 @@ docker run -p 8080:8080 \
 version: '3.4'
 services:
   
-  kafka-ui:
-    image: provectuslabs/kafka-ui
-    container_name: kafka-ui
+  kafbat-ui:
+    image: ghcr.io/kafbat/kafka-ui
+    container_name: kafbat-ui
     ports:
       - "888:8080"
     restart: always

@@ -18,7 +18,7 @@ Base64 (RFC4648) binary data representation. Can be useful in case if the actual
 
 [Hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) binary data representation. Bytes delimiter and case can be configured.&#x20;
 
-Class name: `com.provectus.kafka.ui.serdes.builtin.HexSerde`
+Class name: `io.kafbat.ui.serdes.builtin.HexSerde`
 
 ```
 kafka:
@@ -27,7 +27,7 @@ kafka:
       # Other Cluster configuration omitted ... 
       serde:
         - name: HexWithEditedDelimiter
-          className: com.provectus.kafka.ui.serdes.builtin.HexSerde
+          className: io.kafbat.ui.serdes.builtin.HexSerde
           properties:
             uppercase: "false"
             delimiter: ":"
@@ -37,7 +37,7 @@ kafka:
 
 Treats binary data as a string in specified encoding. Default encoding is UTF-8.
 
-Class name: `com.provectus.kafka.ui.serdes.builtin.StringSerde`
+Class name: `io.kafbat.ui.serdes.builtin.StringSerde`
 
 Sample configuration (if you want to overwrite default configuration):
 
@@ -49,7 +49,7 @@ kafka:
       serde:
           # registering String serde with custom config
         - name: AsciiString
-          className: com.provectus.kafka.ui.serdes.builtin.StringSerde
+          className: io.kafbat.ui.serdes.builtin.StringSerde
           properties:
             encoding: "ASCII"
         
@@ -61,7 +61,7 @@ kafka:
 
 #### ProtobufFile
 
-Class name: `com.provectus.kafka.ui.serdes.builtin.ProtobufFileSerde`
+Class name: `io.kafbat.ui.serdes.builtin.ProtobufFileSerde`
 
 Sample configuration:
 
@@ -111,7 +111,7 @@ Deserialize-only serde. Decodes protobuf payload without a predefined schema (li
 
 SchemaRegistry serde is automatically configured if schema registry properties set on cluster level. But you can add new SchemaRegistry-typed serdes that will connect to another schema-registry instance.
 
-Class name: `com.provectus.kafka.ui.serdes.builtin.sr.SchemaRegistrySerde`
+Class name: `io.kafbat.ui.serdes.builtin.sr.SchemaRegistrySerde`
 
 Sample configuration:
 
@@ -123,7 +123,7 @@ kafka:
       schemaRegistry: http://main-schema-registry:8081
       serde:
         - name: AnotherSchemaRegistry
-          className: com.provectus.kafka.ui.serdes.builtin.sr.SchemaRegistrySerde
+          className: io.kafbat.ui.serdes.builtin.sr.SchemaRegistrySerde
           properties:
             url:  http://another-schema-registry:8081
             # auth properties, optional
@@ -132,7 +132,7 @@ kafka:
         
           # and also add another SchemaRegistry serde
         - name: ThirdSchemaRegistry
-          className: com.provectus.kafka.ui.serdes.builtin.sr.SchemaRegistrySerde
+          className: io.kafbat.ui.serdes.builtin.sr.SchemaRegistrySerde
           properties:
             url:  http://another-yet-schema-registry:8081
 ```
@@ -183,13 +183,13 @@ If selected serde couldn't be applied (exception was thrown), then fallback (Str
 
 ### Custom pluggable serde registration
 
-You can implement your own serde and register it in kafka-ui application. To do so:
+You can implement your own serde and register it in kafbat-ui application. To do so:
 
-1. Add `kafka-ui-serde-api` dependency (should be downloadable via maven central)
-2. Implement `com.provectus.kafka.ui.serde.api.Serde` interface. See javadoc for implementation requirements.
+1. Add `kafbat-ui-serde-api` dependency (should be downloadable via maven central)
+2. Implement `io.kafbat.ui.serde.api.Serde` interface. See javadoc for implementation requirements.
 3. Pack your serde into uber jar, or provide directory with no-dependency jar and it's dependencies jars
 
-Example pluggable serdes : [kafka-smile-serde](https://github.com/provectus/kafkaui-smile-serde), [kafka-glue-sr-serde](https://github.com/provectus/kafkaui-glue-sr-serde)
+Example pluggable serdes : [kafka-smile-serde](https://github.com/kafbat/ui-serde-smile), [kafka-glue-sr-serde](https://github.com/kafbat/ui-serde-glue)
 
 Sample configuration:
 

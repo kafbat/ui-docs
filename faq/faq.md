@@ -14,15 +14,15 @@
 
 ### LDAP
 
-See [this](https://github.com/provectus/kafka-ui/blob/master/documentation/compose/auth-ldap.yaml#L29) example.
+See [this](https://github.com/kafbat/kafka-ui/blob/main/documentation/compose/auth-ldap.yaml#L29) example.
 
 ### Active Directory (LDAP)
 
-See [this](https://github.com/provectus/kafka-ui/blob/master/documentation/compose/auth-ldap.yaml#L29) example.
+See [this](https://github.com/kafbat/kafka-ui/blob/main/documentation/compose/auth-ldap.yaml#L29) example.
 
 ### SAML
 
-Planned, see [#478](https://github.com/provectus/kafka-ui/issues/478)
+Planned, see [#478](https://github.com/kafbat/kafka-ui/issues/478)
 
 ### Smart filters syntax
 
@@ -48,4 +48,4 @@ name == "iliax" && age == 30
 
 ### Can I use the app as API?
 
-Yes, you can. Swagger declaration is located [here](https://github.com/provectus/kafka-ui/blob/master/kafka-ui-contract/src/main/resources/swagger/kafka-ui-api.yaml).
+Yes, you can. Swagger declaration is located [here](https://github.com/kafbat/kafka-ui/blob/main/kafka-ui-contract/src/main/resources/swagger/kafka-ui-api.yaml).

@@ -86,7 +86,7 @@ auth:
         user-name-attribute: email
         custom-params:
           type: google
-          allowedDomain: provectus.com # for RBAC
+          allowedDomain: kafbat.io # for RBAC
 ```
 
 ### Azure
@@ -116,7 +116,7 @@ auth:
 
 Example of callback URL for github OAuth app settings:
 
-`https://www.kafka-ui.provectus.io/login/oauth2/code/github`
+`https://kafbat.io/login/oauth2/code/github`
 
 For the self-hosted installation find the properties a little bit below.
 

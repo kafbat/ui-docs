@@ -17,10 +17,10 @@ kafka:
 ```
 
 | Name                                                  | Description                                                                                                                                                      |
-| ----------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `SERVER_SERVLET_CONTEXT_PATH`                         | URI basePath                                                                                                                                                     |
 | `LOGGING_LEVEL_ROOT`                                  | Setting log level (trace, debug, info, warn, error). Default: info                                                                                               |
-| `LOGGING_LEVEL_COM_PROVECTUS`                         | Setting log level (trace, debug, info, warn, error). Default: debug                                                                                              |
+| `LOGGING_LEVEL_IO_KAFBAT`                             | Setting log level (trace, debug, info, warn, error). Default: debug                                                                                              |
 | `SERVER_PORT`                                         | Port for the embedded server. Default: `8080`                                                                                                                    |
 | `KAFKA_ADMIN-CLIENT-TIMEOUT`                          | Kafka API timeout in ms. Default: `30000`                                                                                                                        |
 | `KAFKA_CLUSTERS_0_NAME`                               | Cluster name                                                                                                                                                     |
@@ -39,7 +39,7 @@ kafka:
 | `KAFKA_CLUSTERS_0_METRICS_SSL`                        | Enable SSL for Metrics (for PROMETHEUS metrics type). Default: false.                                                                                            |
 | `KAFKA_CLUSTERS_0_METRICS_USERNAME`                   | Username for Metrics authentication                                                                                                                              |
 | `KAFKA_CLUSTERS_0_METRICS_PASSWORD`                   | Password for Metrics authentication                                                                                                                              |
-| `KAFKA_CLUSTERS_0_METRICS_KEYSTORELOCATION`           | Path to the JKS keystore to communicate to metrics source (JMX/PROMETHEUS). For advanced setup, see `kafka-ui-jmx-secured.yml`                                   |
+| `KAFKA_CLUSTERS_0_METRICS_KEYSTORELOCATION`           | Path to the JKS keystore to communicate to metrics source (JMX/PROMETHEUS). For advanced setup, see `kafbat-ui-jmx-secured.yml`                                  |
 | `KAFKA_CLUSTERS_0_METRICS_KEYSTOREPASSWORD`           | Password of the JKS metrics keystore                                                                                                                             |
 | `KAFKA_CLUSTERS_0_SCHEMANAMETEMPLATE`                 | How keys are saved to schemaRegistry                                                                                                                             |
 | `KAFKA_CLUSTERS_0_METRICS_PORT`                       | Open metrics port of a broker                                                                                                                                    |
@@ -51,7 +51,7 @@ kafka:
 | `KAFKA_CLUSTERS_0_KAFKACONNECT_0_PASSWORD`            | Kafka Connect cluster's basic authentication password                                                                                                            |
 | `KAFKA_CLUSTERS_0_KAFKACONNECT_0_KEYSTORELOCATION`    | Path to the JKS keystore to communicate to Kafka Connect                                                                                                         |
 | `KAFKA_CLUSTERS_0_KAFKACONNECT_0_KEYSTOREPASSWORD`    | Password of the JKS keystore for Kafka Connect                                                                                                                   |
-| `KAFKA_CLUSTERS_0_POLLING_THROTTLE_RATE`              | Max traffic rate (bytes/sec) that kafka-ui allowed to reach when polling messages from the cluster. Default: 0 (not limited)                                     |
+| `KAFKA_CLUSTERS_0_POLLING_THROTTLE_RATE`              | Max traffic rate (bytes/sec) that kafbat-ui allowed to reach when polling messages from the cluster. Default: 0 (not limited)                                    |
 | `KAFKA_CLUSTERS_0_SSL_TRUSTSTORELOCATION`             | Path to the JKS truststore to communicate to Kafka Connect, SchemaRegistry, KSQL, Metrics                                                                        |
 | `KAFKA_CLUSTERS_0_SSL_TRUSTSTOREPASSWORD`             | Password of the JKS truststore for Kafka Connect, SchemaRegistry, KSQL, Metrics                                                                                  |
 | `TOPIC_RECREATE_DELAY_SECONDS`                        | Time delay between topic deletion and topic creation attempts for topic recreate functionality. Default: 1                                                       |

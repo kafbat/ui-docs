@@ -10,11 +10,11 @@ description: Quick Start with Helm Chart
 2.  Execute command
 
     ```
-    helm repo add kafka-ui https://provectus.github.io/kafka-ui-charts
-    helm install kafka-ui kafka-ui/kafka-ui
+    helm repo add kafbat-ui https://kafbat.github.io/helm-charts
+    helm install kafbat-ui kafbat-ui/kafbat-ui
     ```
 
-#### Passing Kafka-UI configuration as Dict
+#### Passing Kafbat-UI configuration as Dict
 
 Create values.yml file
 
@@ -44,7 +44,7 @@ Create config map
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: kafka-ui-configmap
+  name: kafbat-ui-configmap
 data:
   config.yml: |-
     kafka:
@@ -73,7 +73,7 @@ Create config map
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: kafka-ui-helm-values
+  name: kafbat-ui-helm-values
 data:
   KAFKA_CLUSTERS_0_NAME: "kafka-cluster-name"
   KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: "kafka-cluster-broker-endpoints:9092"
@@ -83,4 +83,4 @@ data:
 
 Install by executing the command
 
-> helm install helm-release-name charts/kafka-ui --set existingConfigMap="kafka-ui-helm-values"
+> helm install helm-release-name charts/kafka-ui --set existingConfigMap="kafbat-ui-helm-values"

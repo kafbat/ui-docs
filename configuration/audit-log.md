@@ -1,6 +1,6 @@
 # Audit log
 
-Kafka-UI allows you to log all operations to your kafka clusters done within kafka-ui itself.
+Kafbat-UI allows you to log all operations to your kafka clusters done within kafbat-ui itself.
 
 Logging can be done to either kafka topic and/or console.
 

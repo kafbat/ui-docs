@@ -2,7 +2,7 @@
 
 ## Topics data masking
 
-You can configure kafka-ui to mask sensitive data shown in Messages page.
+You can configure kafbat-ui to mask sensitive data shown in Messages page.
 
 Several masking policies supported:
 

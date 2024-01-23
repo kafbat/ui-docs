@@ -4,9 +4,9 @@ Kafka-ui has integration with the [OpenDataDiscovery platform](https://opendatad
 
 ODD Platform allows you to monitor and navigate kafka data streams and see how they embed into your data platform.
 
-This integration allows you to use kafka-ui as an ODD "Collector" for kafka clusters.
+This integration allows you to use kafbat-ui as an ODD "Collector" for kafka clusters.
 
-Currently, kafka-ui exports:
+Currently, kafbat-ui exports:
 
 * kafka topics as ODD Datasets with topic's metadata, configs, and schemas
 * kafka-connect's connectors as ODD Transformers, including input & output topics and additional connector configs

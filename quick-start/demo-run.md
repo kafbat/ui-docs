@@ -9,7 +9,7 @@ description: Quick start (demo run)
 3. Run the following:
 
 ```
-docker run -it -p 8080:8080 -e DYNAMIC_CONFIG_ENABLED=true provectuslabs/kafka-ui
+docker run -it -p 8080:8080 -e DYNAMIC_CONFIG_ENABLED=true ghcr.io/kafbat/kafka-ui
 ```
 
 4. Go to \`[http://localhost:8080/ui/clusters/create-new-cluster](http://localhost:8080/ui/clusters/create-new-cluster)\` and configure your first cluster by pressing on "Configure new cluster" button.
