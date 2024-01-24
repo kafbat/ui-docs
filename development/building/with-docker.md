@@ -18,18 +18,18 @@ Once you installed the prerequisites and cloned the repository, run the followin
 ./mvnw clean install -Pprod
 ```
 
-* if you need to build the frontend `kafbat-ui-react-app`, go here
-  * kafbat-ui-react-app-build-documentation
-* In case you want to build `kafbat-ui-api` by skipping the tests
+* if you need to build the frontend module, go to
+  * frontend-build-documentation
+* In case you want to build `api` moduke by skipping the tests
 
 ```
 ./mvnw clean install -Dmaven.test.skip=true -Pprod
 ```
 
-* To build only the `kafbat-ui-api` you can use this command:
+* To build only the `api` module you can use this command:
 
 ```
-./mvnw -f kafbat-ui-api/pom.xml clean install -Pprod -DskipUIBuild=true
+./mvnw -f api/pom.xml clean install -Pprod -DskipUIBuild=true
 ```
 
 If this step is successful, it should create a docker image named `ghcr.io/kafbat/kafka-ui` with `latest` tag on your local machine except macOS M1.

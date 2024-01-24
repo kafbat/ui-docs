@@ -185,7 +185,7 @@ If selected serde couldn't be applied (exception was thrown), then fallback (Str
 
 You can implement your own serde and register it in kafbat-ui application. To do so:
 
-1. Add `kafbat-ui-serde-api` dependency (should be downloadable via maven central)
+1. Add `serde-api` dependency (should be downloadable via maven central)
 2. Implement `io.kafbat.ui.serde.api.Serde` interface. See javadoc for implementation requirements.
 3. Pack your serde into uber jar, or provide directory with no-dependency jar and it's dependencies jars
 

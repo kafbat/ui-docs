@@ -48,4 +48,4 @@ name == "iliax" && age == 30
 
 ### Can I use the app as API?
 
-Yes, you can. Swagger declaration is located [here](https://github.com/kafbat/kafka-ui/blob/main/kafka-ui-contract/src/main/resources/swagger/kafka-ui-api.yaml).
+Yes, you can. Swagger declaration is located [here](https://github.com/kafbat/kafka-ui/blob/main/contract/src/main/resources/swagger/kafbat-ui-api.yaml).

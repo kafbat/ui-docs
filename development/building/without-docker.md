@@ -16,13 +16,13 @@ Once you installed the prerequisites and cloned the repository, run the followin
 java -Dspring.config.additional-location=<path-to-application-local.yml> --add-opens java.rmi/javax.rmi.ssl=ALL-UNNAMED -jar <path-to-kafbat-ui-jar>
 ```
 
-* Example of how to configure clusters in the [application-local.yml](https://github.com/kafbat/kafka-ui/blob/main/kafbat-ui-api/src/main/resources/application-local.yml) configuration file.
+* Example of how to configure clusters in the [application-local.yml](https://github.com/kafbat/kafka-ui/blob/main/api/src/main/resources/application-local.yml) configuration file.
 
 ### Building And Running Without Docker <a href="#build_and_run_without_docker" id="build_and_run_without_docker"></a>
 
 > _**NOTE:**_ If you want to get kafbat-ui up and running locally quickly without building the jar file manually, then just follow Running Without Docker Quickly
 
-> Comment out `docker-maven-plugin` plugin in `kafbat-ui-api` pom.xml
+> Comment out `docker-maven-plugin` plugin in `api` moduke `pom.xml`
 
 * Command to build the jar
 
