@@ -6,9 +6,9 @@ Create a yml file with the following contents:
 
 ```
 services:
-  kafka-ui:
-    container_name: kafka-ui
-    image: provectuslabs/kafka-ui:latest
+  kafbat-ui:
+    container_name: kafbat-ui
+    image: ghcr.io/kafbat/kafka-ui
     ports:
       - 8080:8080
     environment:

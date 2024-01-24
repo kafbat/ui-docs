@@ -98,7 +98,7 @@ export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
 
 ### Tips
 
-Consider allocating not less than 4GB of memory for your docker. Otherwise, some apps within a stack (e.g. `kafka-ui.yaml`) might crash.
+Consider allocating not less than 4GB of memory for your docker. Otherwise, some apps within a stack (e.g. `kafbat-ui.yaml`) might crash.
 
 To check how much memory is allocated to docker, use `docker info`.
 
@@ -143,4 +143,4 @@ Now any containers you run in docker will be limited to this amount of memory. Y
 
 ### Where to go next
 
-In the next section, you'll learn how to Build and Run kafka-ui.
+In the next section, you'll learn how to Build and Run kafbat-ui.

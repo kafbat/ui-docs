@@ -2,7 +2,7 @@
 
 This guide has been written for MSK Serverless but is applicable for MSK in general as well.
 
-### Authentication options for Kafka-UI:
+### Authentication options for Kafbat-UI:
 
 ```
 KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL=SASL_SSL
@@ -89,7 +89,7 @@ KAFKA_CLUSTERS_0_PROPERTIES_SASL_CLIENT_CALLBACK_HANDLER_CLASS='software.amazon.
 ### Attaching the role to the EC2 instance
 
 1. Go to EC2
-2. Choose your EC2 with Kafka-UI
+2. Choose your EC2 with Kafbat-UI
 3. Go to Actions -> Security -> Modify IAM role
 4. Choose the IAM role from previous step
 5. Click Update IAM role

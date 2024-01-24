@@ -30,7 +30,7 @@ This is a main parameters required for enabling SSO
 
 ### Step 3
 
-To launch UI for Apache Kafka with enabled TLS and SSO run following:
+To launch Kafbat UI with enabled TLS and SSO run following:
 
 ```bash
 docker run -p 8080:8080 -v `pwd`/cert:/opt/cert -e AUTH_TYPE=LOGIN_FORM \
@@ -46,7 +46,7 @@ docker run -p 8080:8080 -v `pwd`/cert:/opt/cert -e AUTH_TYPE=LOGIN_FORM \
   -e SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_AUTH0_SCOPE=openid \
   -e TRUST_STORE=/opt/cert/ui-for-apache-kafka.p12 \
   -e TRUST_STORE_PASSWORD=123456 \
-provectuslabs/kafka-ui:latest
+ghcr.io/kafbat/kafka-ui
 ```
 
 In the case with trusted CA-signed SSL certificate and SSL termination somewhere outside of application we can pass only SSO related environment variables:
@@ -57,12 +57,12 @@ docker run -p 8080:8080 -v `pwd`/cert:/opt/cert -e AUTH_TYPE=OAUTH2 \
   -e SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_AUTH0_CLIENTSECRET=YXfRjmodifiedTujnkVr7zuW9ECCAK4TcnCio-i \
   -e SPRING_SECURITY_OAUTH2_CLIENT_PROVIDER_AUTH0_ISSUER_URI=https://dev-a63ggcut.auth0.com/ \
   -e SPRING_SECURITY_OAUTH2_CLIENT_REGISTRATION_AUTH0_SCOPE=openid \
-provectuslabs/kafka-ui:latest
+ghcr.io/kafbat/kafka-ui
 ```
 
 ### Step 4 (Load Balancer HTTP) (optional)
 
-If you're using load balancer/proxy and use HTTP between the proxy and the app, you might want to set `server_forward-headers-strategy` to `native` as well (`SERVER_FORWARDHEADERSSTRATEGY=native`), for more info refer to [this issue](https://github.com/provectus/kafka-ui/issues/1017).
+If you're using load balancer/proxy and use HTTP between the proxy and the app, you might want to set `server_forward-headers-strategy` to `native` as well (`SERVER_FORWARDHEADERSSTRATEGY=native`), for more info refer to [this issue](https://github.com/kafbat/kafka-ui/issues/1017).
 
 ### Step 5 (Azure) (optional)
 
@@ -82,7 +82,7 @@ docker run -p 8080:8080 \
         -e AUTH_OAUTH2_CLIENT_AZURE_PROVIDER="azure" \
         -e AUTH_OAUTH2_CLIENT_AZURE_ISSUERURI="https://login.microsoftonline.com/{tenant_id}/v2.0" \
         -e AUTH_OAUTH2_CLIENT_AZURE_JWKSETURI="https://login.microsoftonline.com/{tenant_id}/discovery/v2.0/keys" \
-        -d provectuslabs/kafka-ui:latest"
+        -d ghcr.io/kafbat/kafka-ui"
 ```
 
 Note that scope is created by default when Application registration is done in Azure portal. You'll need to update application registration manifest to include `"accessTokenAcceptedVersion": 2`

@@ -13,9 +13,9 @@ Please note that we have a [code of conduct](../project/code-of-conduct.md). Mak
 ### Choosing an issue
 
 There are two options to look for the issues to contribute to.\
-The first is our ["Up for grabs"](https://github.com/provectus/kafka-ui/projects/11) board. There the issues are sorted by the required experience level (beginner, intermediate, expert).
+The first is our ["Up for grabs"](https://github.com/kafbat/kafka-ui/projects/11) board. There the issues are sorted by the required experience level (beginner, intermediate, expert).
 
-The second option is to search for ["good first issue"](https://github.com/provectus/kafka-ui/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)-labeled issues. Some of them might not be displayed on the aforementioned board or vice versa.
+The second option is to search for ["good first issue"](https://github.com/kafbat/kafka-ui/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)-labeled issues. Some of them might not be displayed on the aforementioned board or vice versa.
 
 You also need to consider labels. You can sort the issues by scope labels, such as `scope/backend`, `scope/frontend` or even `scope/k8s`. If any issue covers several specific areas, and you do not have the required expertise for one of them, just do your part of the work — others will do the rest.
 

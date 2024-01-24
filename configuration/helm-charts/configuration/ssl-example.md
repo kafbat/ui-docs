@@ -1,8 +1,8 @@
 # SSL example
 
-## Implement ssl for kafka-ui
+## Implement ssl for kafbat-ui
 
-To implement SSL for kafka-ui you need to provide JKS files into the pod. Here is the instruction on how to do that.
+To implement SSL for kafbat-ui you need to provide JKS files into the pod. Here is the instruction on how to do that.
 
 ### Create config map with content from kafka.truststore.jks and kafka.keystore.jks.
 
@@ -65,11 +65,11 @@ volumes:
 ### Install chart with command
 
 ```
-helm install kafka-ui kafka-ui/kafka-ui-charts -f ssl-values.yaml
+helm install kafbat-ui kafbat-ui/helm-charts -f ssl-values.yaml
 ```
 
 If you have specified namespace for configmap and secret please use this command
 
 ```
-helm install kafka-ui kafka-ui/kafka-ui -f ssl-values.yaml -n {namespace}
+helm install kafbat-ui kafbat-ui/helm-charts -f ssl-values.yaml -n {namespace}
 ```

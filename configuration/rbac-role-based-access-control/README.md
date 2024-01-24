@@ -2,11 +2,11 @@
 
 ## Role-based access control
 
-In this article, we'll guide how to set up Kafka-UI with role-based access control.
+In this article, we'll guide how to set up Kafbat-UI with role-based access control.
 
 ### Authentication methods
 
-First of all, you'd need to set up authentication method(s). Refer to [this](https://github.com/provectus/kafka-ui/wiki/OAuth-Configuration) article for OAuth2 setup.
+First of all, you'd need to set up authentication method(s). Refer to [this](https://github.com/kafbat/kafka-ui/wiki/OAuth-Configuration) article for OAuth2 setup.
 
 ### Config placement
 
@@ -19,9 +19,9 @@ This is how you include one more file to start with a docker-compose example:
 
 ```
 services:
-  kafka-ui:
-    container_name: kafka-ui
-    image: provectuslabs/kafka-ui:latest
+  kafbat-ui:
+    container_name: kafbat-ui
+    image: ghcr.io/kafbat/kafka-ui
     environment:
       KAFKA_CLUSTERS_0_NAME: local
       # other properties, omitted
@@ -182,7 +182,7 @@ rbac:
         #      selector:
         #        connector:
         #          name: ".*"
-        #          class: 'com.provectus.connectorName'
+        #          class: 'io.kafbat.connectorName'
 
         - resource: ksql
           # value not applicable for ksql

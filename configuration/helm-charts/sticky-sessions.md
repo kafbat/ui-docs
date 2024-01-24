@@ -11,5 +11,5 @@ An example:
     nginx.ingress.kubernetes.io/affinity-mode: balanced
     nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
     nginx.ingress.kubernetes.io/session-cookie-max-age: "172800"
-    nginx.ingress.kubernetes.io/session-cookie-name: kafka-ui
+    nginx.ingress.kubernetes.io/session-cookie-name: kafbat-ui
 ```

@@ -14,7 +14,7 @@ Check the [required permissions](../quick-start/prerequisites/permissions/requir
 
 ## AWS MSK w/ IAM: Access denied
 
-https://github.com/provectus/kafka-ui/discussions/1104#discussioncomment-1656843 https://github.com/provectus/kafka-ui/discussions/1104#discussioncomment-2963449 https://github.com/provectus/kafka-ui/issues/2184#issuecomment-1198506124
+https://github.com/kafbat/kafka-ui/discussions/1104#discussioncomment-1656843 https://github.com/kafbat/kafka-ui/discussions/1104#discussioncomment-2963449 https://github.com/kafbat/kafka-ui/issues/2184#issuecomment-1198506124
 
 ## AWS MSK: TimeoutException
 
@@ -29,7 +29,7 @@ Thanks to ahlooli#2666 on discord:
    3. Port: 9096
 5. Find out all the MSK's broker ENI. Proceed to attach the above sec. group to each ENI. (if you have 3 brokers which means you have 3 Eni, you need to do it manually 1 by 1)
 
-At this stage, the AWS side should have sufficient permission to allow KAFKA-UI to communicate with it.
+At this stage, the AWS side should have sufficient permission to allow kafbat-ui to communicate with it.
 
 ## DataBufferLimitException: Exceeded limit on max bytes to buffer
 

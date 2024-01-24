@@ -8,9 +8,9 @@ description: How to Deploy Kafka UI from AWS Marketplace
 
 Go to the AWS Marketplace website and sign in to your account.
 
-### Step 2: Find UI for Apache Kafka
+### Step 2: Find Kafbat UI
 
-Either use the search bar to find "UI for Apache Kafka" or go to [marketplace product page](https://aws.amazon.com/marketplace/pp/prodview-ogtt5hfhzkq6a).
+Either use the search bar to find "Kafbat UI" or go to [marketplace product page](https://aws.amazon.com/marketplace/pp/prodview-ogtt5hfhzkq6a).
 
 ### Step 3: Subscribe and Configure
 
@@ -47,7 +47,7 @@ Example: `ec2-xx-xxx-x-xx.us-west-2.compute.amazonaws.com:8080`
 
 ### Step 8: Configure Kafka UI to Communicate with Brokers
 
-If your broker is deployed in AWS then allow incoming from Kafka-ui EC2 by adding an ingress rule in the security group which is used for a broker.\
+If your broker is deployed in AWS then allow incoming from Kafbat UI EC2 by adding an ingress rule in the security group which is used for a broker.\
 If your broker is not in AWS then be sure that your broker can handle requests from Kafka-ui EC2 IP address.
 
 More about permissions: [msk-+serverless-setup.md](prerequisites/permissions/msk-+serverless-setup.md "mention")

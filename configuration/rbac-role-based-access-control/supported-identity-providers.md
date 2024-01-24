@@ -39,7 +39,7 @@ Set up github auth [first](../authentication/oauth2.md#github)
 ```yaml
         - provider: oauth_github
           type: organization
-          value: "provectus"
+          value: "kafbat"
         - provider: oauth_github
           type: user
           value: "memelord"
@@ -70,7 +70,7 @@ Set up LDAP auth [first](../authentication/ldap-active-directory.md)
 
 ### Active Directory
 
-Not yet supported, see [Issue 3741](https://github.com/provectus/kafka-ui/issues/3741)
+Not yet supported, see [Issue 3741](https://github.com/kafbat/kafka-ui/issues/3741)
 
 ```yaml
        - provider: ldap_ad # NOT YET SUPPORTED, SEE ISSUE 3741

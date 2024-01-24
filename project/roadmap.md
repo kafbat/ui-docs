@@ -1,10 +1,10 @@
 ---
-description: Kafka-UI Project Roadmap
+description: Kafbat-UI Project Roadmap
 ---
 
 # Roadmap
 
-Roadmap exists in a form of a GitHub project board and is located [here](https://github.com/provectus/kafka-ui/projects/8).
+Roadmap exists in a form of a GitHub project board and is located [here](https://github.com/kafbat/kafka-ui/projects/8).
 
 #### How to use this document
 

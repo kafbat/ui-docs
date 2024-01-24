@@ -4,7 +4,7 @@ description: How to configure AWS IAM Authentication
 
 # AWS IAM
 
-UI for Apache Kafka comes with a built-in [aws-msk-iam-auth](https://github.com/aws/aws-msk-iam-auth) library.
+Kafbat UI comes with a built-in [aws-msk-iam-auth](https://github.com/aws/aws-msk-iam-auth) library.
 
 You could pass SASL configs in the properties section for each cluster.
 
@@ -29,7 +29,7 @@ docker run -p 8080:8080 \
     -e KAFKA_CLUSTERS_0_PROPERTIES_SASL_MECHANISM=AWS_MSK_IAM \
     -e KAFKA_CLUSTERS_0_PROPERTIES_SASL_CLIENT_CALLBACK_HANDLER_CLASS=software.amazon.msk.auth.iam.IAMClientCallbackHandler \
     -e KAFKA_CLUSTERS_0_PROPERTIES_SASL_JAAS_CONFIG=software.amazon.msk.auth.iam.IAMLoginModule required awsProfileName="<PROFILE_NAME>"; \
-    -d provectuslabs/kafka-ui:latest 
+    -d ghcr.io/kafbat/kafka-ui 
 ```
 
 #### Configuring by application.yaml
