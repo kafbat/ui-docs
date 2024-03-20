@@ -10,6 +10,6 @@
 * **Dynamic Topic Configuration** — create and configure new topics with dynamic configuration
 * **Configurable Authentification** — secure your installation with optional Github/Gitlab/Google OAuth 2.0
 * **Custom serialization/deserialization plugins** - use a ready-to-go serde for your data like AWS Glue or Smile, or code your own!
-* **Role-based access control** - [manage permissions](https://github.com/kafbat/kafka-ui/wiki/RBAC-\(role-based-access-control\)) to access the UI with granular precision
-* **Data masking** - [obfuscate](https://github.com/kafbat/kafka-ui/blob/main/documentation/guides/DataMasking.md) sensitive data in topic messages
+* **Role-based access control** - [manage permissions](../configuration/rbac-role-based-access-control/) to access the UI with granular precision
+* **Data masking** - [obfuscate](../configuration/data-masking.md) sensitive data in topic messages
 * **ODD Integration** — Explore and monitor kafka related metadata changes in OpenDataDiscovery platform

@@ -6,7 +6,7 @@
 * [Features](overview/features.md)
 * [Getting started](overview/getting-started.md)
 
-## 🛣 Project
+## 🛣️ Project
 
 * [Code of Conduct](project/code-of-conduct.md)
 * [Roadmap](project/roadmap.md)
@@ -32,7 +32,7 @@
 * [Persistent start](quick-start/persistent-start.md)
 * [K8s / Helm](quick-start/k8s-helm.md)
 
-## 🛠 Configuration
+## 🛠️ Configuration
 
 * [Configuration wizard](configuration/configuration-wizard.md)
 * [Configuration file](configuration/configuration-file.md)
