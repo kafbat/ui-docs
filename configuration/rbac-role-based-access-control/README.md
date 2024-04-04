@@ -6,7 +6,7 @@ In this article, we'll guide how to set up Kafbat-UI with role-based access cont
 
 ### Authentication methods
 
-First of all, you'd need to set up authentication method(s). Refer to [this](https://github.com/kafbat/kafka-ui/wiki/OAuth-Configuration) article for OAuth2 setup.
+First of all, you'd need to set up authentication method(s). Refer to [this](../authentication) article for setup.
 
 ### Config placement
 
