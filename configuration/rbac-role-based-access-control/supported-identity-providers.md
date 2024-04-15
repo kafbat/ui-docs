@@ -1,22 +1,23 @@
 ---
-description: The list of supported auth mechanisms for RBAC
+description: The list of supported auth providers for RBAC
 ---
 
 # Supported Identity Providers
 
 ### Generic OAuth
 
-Any OAuth provider which is not of the list: Google, GitHub, Cognito.
+Any OAuth provider not on the list of all providers below this one.
 
-Set up the auth itself first, docs [here](../authentication/oauth2.md) and [here](../authentication/sso-guide.md)
-
-Don't forget "custom-params.type: oauth".
+Set up the auth itself first, docs [here](../authentication/oauth2.md) and [here](../authentication/sso-guide.md). **Don't forget "custom-params.type: oauth".**
 
 ```yaml
       subjects:
         - provider: oauth
           type: role
           value: "role-name"
+        - provider: oauth
+          type: user
+          value: "zoidberg"
 ```
 
 ### Google
