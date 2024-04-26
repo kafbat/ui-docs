@@ -6,7 +6,7 @@ In this article, we'll guide how to set up Kafbat-UI with role-based access cont
 
 ### Authentication methods
 
-First of all, you'd need to set up authentication method(s). Refer to [this](../authentication) article for setup.
+First of all, you'd need to set up authentication method(s). Refer to [this](../authentication/) article for setup.
 
 ### Config placement
 
@@ -68,11 +68,14 @@ A role also has a list of _subjects_ which are the entities we will use to assig
 
 A list of supported providers and corresponding subject fetch mechanism:
 
+* oauth: `user`, `role`
 * oauth\_google: `user`, `domain`
 * oauth\_github: `user`, `organization`
 * oauth\_cognito: `user`, `group`
 * ldap: `group`
-* ldap\_ad: (unsupported yet, will do in 0.8 release)
+* ldap\_ad: (unsupported yet, see [Issue 54](https://github.com/kafbat/kafka-ui/issues/54))
+
+More on identity providers in: [supported-identity-providers.md](supported-identity-providers.md "mention")
 
 Find the more detailed examples in a full example file lower.
 
