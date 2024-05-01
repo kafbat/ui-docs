@@ -38,7 +38,7 @@ If this step is successful, it should create a docker image named `ghcr.io/kafba
 
 **Using Docker Compose**
 
-> _**NOTE:**_ If you are an macOS M1 User then you can use arm64 supported docker compose script `./documentation/compose/kafbat-ui-arm64.yaml`
+> _**NOTE:**_ If you are an macOS M1 User then you can use arm64 supported docker compose script `.dev/dev_arm64.yaml`
 
 * Start the app using docker image built in step 1 along with Kafka clusters:
 
