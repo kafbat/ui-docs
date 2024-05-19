@@ -65,3 +65,4 @@
 
 * [Common problems](faq/common-problems.md)
 * [FAQ](faq/faq.md)
+* [Authentication](faq/authentication.md)
