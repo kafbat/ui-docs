@@ -11,7 +11,7 @@ description: Quick Start with Helm Chart
 
     ```
     helm repo add kafbat-ui https://kafbat.github.io/helm-charts
-    helm install kafbat-ui kafbat-ui/kafbat-ui
+    helm install kafbat-ui kafbat-ui/kafka-ui
     ```
 
 #### Passing Kafbat-UI configuration as Dict
