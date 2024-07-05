@@ -70,7 +70,7 @@ A list of supported providers and corresponding subject fetch mechanism:
 
 * oauth: `user`, `role`
 * oauth\_google: `user`, `domain`
-* oauth\_github: `user`, `organization`
+* oauth\_github: `user`, `organization`, `team`
 * oauth\_cognito: `user`, `group`
 * ldap: `group`
 * ldap\_ad: (unsupported yet, see [Issue 54](https://github.com/kafbat/kafka-ui/issues/54))
