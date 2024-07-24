@@ -14,7 +14,6 @@ spring:
     group-filter-search-base: "ou=people,dc=planetexpress,dc=com" # required for RBAC
 oauth2:
   ldap:
-    activeDirectory: false
     aсtiveDirectory:
       domain: memelord.lol
 ```
