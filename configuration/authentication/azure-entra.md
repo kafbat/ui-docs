@@ -22,10 +22,15 @@ Pre-requisites:
 
 Please replace `<EVENT HUB NAMESPACE NAME>` with the name of your Event Hub namespace.
 
-### Docker
+See [Default Azure Credential](https://learn.microsoft.com/en-us/azure/developer/java/sdk/identity-azure-hosted-auth#default-azure-credential) 
+for additional configuration required based on the credential type. Any of the supported 
+credential types (Environment Variable, Managed Identity, Azure CLI, etc.) will work once 
+configured.
 
-[Default Azure Credential](https://learn.microsoft.com/en-us/azure/developer/java/sdk/identity-azure-hosted-auth#default-azure-credential) 
-for additional configuration required based on the credential type.
+As an example, after authenticating with the Azure CLI using `az login` Kafbat UI will 
+automatically  authenticate with Event Hubs using CLI credentials.
+
+### Docker
 
 ```bash
 docker run -p 8080:8080 \
