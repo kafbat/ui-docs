@@ -22,13 +22,13 @@ Pre-requisites:
 
 Please replace `<EVENT HUB NAMESPACE NAME>` with the name of your Event Hub namespace.
 
+Prior to starting Kafbat UI, authenticate with Azure Entra using any of the supported 
+Azure Credential types (Environment Variable, Managed Identity, Azure CLI, etc.). 
 See [Default Azure Credential](https://learn.microsoft.com/en-us/azure/developer/java/sdk/identity-azure-hosted-auth#default-azure-credential) 
-for additional configuration required based on the credential type. Any of the supported 
-credential types (Environment Variable, Managed Identity, Azure CLI, etc.) will work once 
-configured.
+for additional configuration required based on the credential type.
 
 As an example, after authenticating with the Azure CLI using `az login` Kafbat UI will 
-automatically  authenticate with Event Hubs using CLI credentials.
+automatically connect to Event Hubs using CLI credentials.
 
 ### Docker
 
