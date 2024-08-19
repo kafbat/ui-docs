@@ -29,25 +29,6 @@ auth:
           roles-field: groups # required for RBAC, a field name in OAuth token which will contain user's roles/groups
 ```
 
-### Secrets injection
-Fields like `clientId` and `clientSecret` can be passed as secret. You need to use the `existingSecret` variable with appropriate fields.
-Example:
-```yaml
-existingSecret: "kafka-ui"
-yamlApplicationConfig:
-  auth:
-    type: OAUTH2
-    oauth2:
-      client:
-        google:
-          provider: google
-          user-name-attribute: <zzz>
-          custom-params:
-            type: google
-            allowedDomain: <your_domain>
-```
-Where `existingSecret` will contain such fields as `AUTH_OAUTH2_CLIENT_GOOGLE_CLIENTID` and `AUTH_OAUTH2_CLIENT_GOOGLE_CLIENTSECRET`
-
 ## Service Discovery
 
 For specific providers like Github (non-enterprise) and Google ([see the current list](https://github.com/spring-projects/spring-security/blob/main/config/src/main/java/org/springframework/security/config/oauth2/client/CommonOAuth2Provider.java#L35)), you don't have to specify URIs as they're well known.
