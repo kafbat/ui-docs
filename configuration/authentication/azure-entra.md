@@ -38,7 +38,7 @@ docker run -p 8080:8080 \
     -e KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=<EVENT HUB NAMESPACE NAME>.servicebus.windows.net:9093 \
     -e KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL=SASL_SSL \
     -e KAFKA_CLUSTERS_0_PROPERTIES_SASL_MECHANISM=OAUTHBEARER \
-    -e KAFKA_CLUSTERS_0_PROPERTIES_SASL_CLIENT_CALLBACK_HANDLER_CLASS=io.kafbat.ui.sasl.azure.entra.AzureEntraLoginCallbackHandler \
+    -e KAFKA_CLUSTERS_0_PROPERTIES_SASL_CLIENT_CALLBACK_HANDLER_CLASS=io.kafbat.ui.config.auth.azure.AzureEntraLoginCallbackHandler \
     -e KAFKA_CLUSTERS_0_PROPERTIES_SASL_JAAS_CONFIG="org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required;" \
     -d ghcr.io/kafbat/kafka-ui
 ```
@@ -54,6 +54,6 @@ kafka:
         sasl.mechanism: OAUTHBEARER
         sasl.jaas.config:
           org.apache.kafka.common.security.oauthbearer.OAuthBearerLoginModule required;
-        sasl.client.callback.handler.class: io.kafbat.ui.sasl.azure.entra.AzureEntraLoginCallbackHandler
+        sasl.client.callback.handler.class: io.kafbat.ui.config.auth.azure.AzureEntraLoginCallbackHandler
       readOnly: false
 ```
