@@ -20,7 +20,7 @@ Once you installed the prerequisites and cloned the repository, run the followin
 
 * if you need to build the frontend module, go to
   * frontend-build-documentation
-* In case you want to build `api` moduke by skipping the tests
+* In case you want to build `api` module by skipping the tests
 
 ```
 ./mvnw clean install -Dmaven.test.skip=true -Pprod
