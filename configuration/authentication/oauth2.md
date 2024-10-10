@@ -226,7 +226,7 @@ auth:
         client-name: goauthentic
         issuer-uri: https://<goauthentic_instance>/application/o/<slug>/
         user-name-attribute: nickname # OR "name", "given_name", "email", "preferred_username"
-        redirect-uri: http://localhost:8080/login/oauth2/code/oauth2
+        redirect-uri: http://localhost:8080/login/oauth2/code/goauthentic
         authorization-grant-type: authorization_code
         custom-params:
           type: oauth
