@@ -26,26 +26,31 @@ Planned, see [#478](https://github.com/kafbat/kafka-ui/issues/478)
 
 ### Smart filters syntax
 
-**Variables bound to groovy context**: partition, timestampMs, keyAsText, valueAsText, header, key (json if possible), value (json if possible).
+We use CEL syntax for smart message filtersVariables bound to the context:
 
-**JSON parsing logic**:
+1. key (json if possible)
+2. value (json if possible)
+3. keyAsText
+4. valueAsText
+5. header
+6. partition
+7. timestampMs
 
-Key and Value (if they can be parsed to JSON) they are bound as JSON objects, otherwise bound as nulls.
+JSON parsing logic:Key and Value (if parsing to JSON is available) are bound as JSON objects, otherwise as nulls.Filter examples:
 
-**Sample filters**:
-
-1. `keyAsText != null && keyAsText ~"([Gg])roovy"` - regex for key as a string
-2. `value.name == "iS.ListItemax" && value.age > 30` - in case value is json
-3. `value == null && valueAsText != null` - search for values that are not nulls and are not json
-4. `headers.sentBy == "some system" && headers["sentAt"] == "2020-01-01"`
-5. multiline filters are also allowed:
-
-```
-def name = value.name
-def age = value.age
-name == "iliax" && age == 30
-```
+1. `has(record.keyAsText) && record.keyAsText.matches(".*[Gg]roovy.*")` - regex for key as a string
+2. `has(record.key.name.first) && record.key.name.first == 'user1'` - in case if the value is json
+3. `record.headers.size() == 1 && !has(record.headers.k1) && record.headers['k2'] == 'v2'`
 
 ### Can I use the app as API?
 
-Yes, you can. Swagger declaration is located [here](https://github.com/kafbat/kafka-ui/blob/main/contract/src/main/resources/swagger/kafbat-ui-api.yaml).
+Sure! Swagger declaration is located [here](https://github.com/kafbat/kafka-ui/blob/main/contract/src/main/resources/swagger/kafbat-ui-api.yaml).
+
+### My OIDC / OAuth provider uses self-signed certificates, how do I add them to the truststore?
+
+```
+server:
+  ssl:
+    trust-store: classpath:keycloak-truststore.jks
+    trust-store-password: changeit
+```
