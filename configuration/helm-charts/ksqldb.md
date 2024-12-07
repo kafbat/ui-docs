@@ -1,0 +1,60 @@
+---
+description: Integrating ksqlDB with Kafbat UI
+---
+
+# Integrating ksqlDB with Kafbat UI
+
+## Summary
+
+This document provides configuration details for integrating ksqlDB with Kafbat UI.
+
+Using Kafbat, you can easily integrate [ksqlDB](https://github.com/confluentinc/ksql) with Kafbat UI. This provides a powerful tool for visualizing and managing real-time streaming data.
+
+![ksqlDB architecture](../../.gitbobok/assets/ksqldb-1.png)
+
+[ksqlDB](https://github.com/confluentinc/ksql) is a SQL engine based on Kafka Streams. ksqlDB provides a query layer that allows you to build event streaming applications on Kafka topics. Unlike Kafka Streams, ksqlDB allows you to create new streams or materialized views using SQL.
+
+## Configuration
+
+ksqlDB configuration is specified in `yamlApplicationConfig` section of `values.yaml` file.
+
+```yaml
+# charts/kafka-ui/values.yaml
+yamlApplicationConfig:
+  kafka:
+    clusters:
+      - name: my-kafka-cluster
+        properties:
+          security:
+            protocol: SSL
+        bootstrapServers: b-2.<REDACTED>.<REDACTED>.c3.kafka.ap-northeast-2.amazonaws.com:9094,b-1.<REDACTED>.<REDACTED>.c3.kafka.ap-northeast-2.amazonaws.com:9094
+        zookeeper: z-2.<REDACTED>.<REDACTED>.c3.kafka.ap-northeast-2.amazonaws.com:2182,z-3.<REDACTED>.<REDACTED>.c3.kafka.ap-northeast-2.amazonaws.com:2182,z-1.<REDACTED>.<REDACTED>.c3.kafka.ap-northeast-2.amazonaws.com:2182
+        audit:
+          topicAuditEnabled: true
+          consoleAuditEnabled: true
+          topic: '__kui-audit-log'
+          auditTopicProperties:
+            retention.ms: 43200000
+          auditTopicsPartitions: 1
+          level: all
+        ## Configuration settings for ksqlDB server
+        ksqldbServer: http://my-ksql.data.svc.cluster.local:8088
+        ksqldbServerSsl:
+          keystoreLocation: <KEYSTORE_LOCATION>
+          keystorePassword: <KEYSTORE_PASSWORD>
+        ksqldbServerAuth:
+          username: <USERNAME>
+          password: <PASSWORD>
+```
+
+This table outlines the configuration keys needed to set up ksqlDB with Kafka UI, including their types, example values, and descriptions for proper environment configuration.
+
+| Configuration Key | Type | Example Value | Description |
+|-------------------|------|---------------|-------------|
+| `kafka.clusters.ksqldbServer` | `string` | `http://my-ksql.data.svc.cluster.local:8088` | URL for the KSQL server, used to connect to the KSQL endpoint.|
+| `kafka.clusters.ksqldbServerSsl.keystoreLocation` | `string` | `/etc/security/ksql/keystore.jks` | Path to the keystore file for SSL connection to the KSQL server.|
+| `kafka.clusters.ksqldbServerSsl.keystorePassword` | `string` | `changeit` | Password for the keystore file, used for SSL authentication. |
+| `kafka.clusters.ksqldbServerAuth.username` | `string` | `ksql_user` | Username for authenticating with the KSQL server. |
+| `kafka.clusters.ksqldbServerAuth.password` | `string` | `ksql_password` | Password for authenticating with the KSQL server. |
+
+For detailed schema structure of `yamlApplicationConfig` values in kafka-ui chart, refer to the [kafbat-ui-api.yaml](https://github.com/kafbat/kafka-ui/blob/main/contract/src/main/resources/swagger/kafbat-ui-api.yaml) file.
