@@ -10,7 +10,7 @@ This document provides configuration details for integrating ksqlDB with Kafbat 
 
 Using Kafbat, you can easily integrate [ksqlDB](https://github.com/confluentinc/ksql) with Kafbat UI. This provides a powerful tool for visualizing and managing real-time streaming data.
 
-![ksqlDB architecture](../../.gitbobok/assets/ksqldb-1.png)
+![ksqlDB architecture](../../.gitbook/assets/ksqldb-1.png)
 
 [ksqlDB](https://github.com/confluentinc/ksql) is a SQL engine based on Kafka Streams. ksqlDB provides a query layer that allows you to build event streaming applications on Kafka topics. Unlike Kafka Streams, ksqlDB allows you to create new streams or materialized views using SQL.
 
