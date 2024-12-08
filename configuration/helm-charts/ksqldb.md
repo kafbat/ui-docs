@@ -24,20 +24,7 @@ yamlApplicationConfig:
   kafka:
     clusters:
       - name: my-kafka-cluster
-        properties:
-          security:
-            protocol: SSL
-        bootstrapServers: b-2.<REDACTED>.<REDACTED>.c3.kafka.ap-northeast-2.amazonaws.com:9094,b-1.<REDACTED>.<REDACTED>.c3.kafka.ap-northeast-2.amazonaws.com:9094
-        zookeeper: z-2.<REDACTED>.<REDACTED>.c3.kafka.ap-northeast-2.amazonaws.com:2182,z-3.<REDACTED>.<REDACTED>.c3.kafka.ap-northeast-2.amazonaws.com:2182,z-1.<REDACTED>.<REDACTED>.c3.kafka.ap-northeast-2.amazonaws.com:2182
-        audit:
-          topicAuditEnabled: true
-          consoleAuditEnabled: true
-          topic: '__kui-audit-log'
-          auditTopicProperties:
-            retention.ms: 43200000
-          auditTopicsPartitions: 1
-          level: all
-        ## Configuration settings for ksqlDB server
+        # ... omitted for brevity ...
         ksqldbServer: http://my-ksql.data.svc.cluster.local:8088
         ksqldbServerSsl:
           keystoreLocation: <KEYSTORE_LOCATION>
