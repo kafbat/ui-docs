@@ -19,7 +19,7 @@ Using Kafbat, you can easily integrate [ksqlDB](https://github.com/confluentinc/
 There are two main ways to add KSQL configuration in kafka-ui:
 
 1. **Helm Chart Method**: Modify the `configMap` settings through the helm chart using the `yamlApplicationConfig` value.
-2. **Environment Variables Method**: Directly add environment variables to the `pod` in the deployment.
+2. **Environment Variables Method**: Directly add environment variables to the `pod` in the deployment. This configuration method can also be used for containers running in docker or docker compose.
 
 Use the method that best suits your environment. For example, if you are deploying in a Kubernetes environment, modifying the `configMap` settings through the helm chart might be more suitable. Alternatively, for a simpler setup or local development, directly adding environment variables to the `pod` in the deployment could be more convenient.
 
