@@ -74,10 +74,8 @@ Set up LDAP auth [first](../authentication/ldap-active-directory.md)
 
 ### Active Directory
 
-Not yet supported, see [Issue 3741](https://github.com/kafbat/kafka-ui/issues/3741)
-
 ```yaml
-       - provider: ldap_ad # NOT YET SUPPORTED, SEE ISSUE 3741
+       - provider: ldap_ad
           type: group
           value: "admin_staff"
 ```
