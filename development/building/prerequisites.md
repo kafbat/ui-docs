@@ -4,7 +4,7 @@
 
 This page explains how to get the software you need to use on Linux or macOS for local development.
 
-* `java 17` package or newer
+* `java 21` package or newer
 * `git` installed
 * `docker` installed
 
@@ -12,22 +12,22 @@ This page explains how to get the software you need to use on Linux or macOS for
 
 #### For Linux
 
-1. Install `OpenJDK 17` package or newer:
+1. Install `OpenJDK 21` package or newer:
 
 ```
 sudo apt update
-sudo apt install openjdk-17-jdk
+sudo apt install openjdk-21-jdk
 ```
 
 * Check java version using the command `java -version`.
 
 ```
-openjdk version "17.0.5" 2022-10-18
-OpenJDK Runtime Environment (build 17.0.5+8-Ubuntu-2ubuntu120.04)
-OpenJDK 64-Bit Server VM (build 17.0.5+8-Ubuntu-2ubuntu120.04, mixed mode, sharing)
+openjdk version "21.0.5" 2024-10-15
+OpenJDK Runtime Environment (build 21.0.5+8-Ubuntu-2ubuntu120.04)
+OpenJDK 64-Bit Server VM (build 21.0.5+8-Ubuntu-2ubuntu120.04, mixed mode, sharing)
 ```
 
-Note: In case OpenJDK 17 is not set as your default Java, run `sudo update-alternatives --config java` command to list all installed Java versions.
+Note: In case OpenJDK 21 is not set as your default Java, run `sudo update-alternatives --config java` command to list all installed Java versions.
 
 ```
 Selection    Path                                            Priority   Status
@@ -35,12 +35,13 @@ Selection    Path                                            Priority   Status
 * 0            /usr/lib/jvm/java-11-openjdk-amd64/bin/java      1111      auto mode
   1            /usr/lib/jvm/java-11-openjdk-amd64/bin/java      1111      manual mode
   2            /usr/lib/jvm/java-16-openjdk-amd64/bin/java      1051      manual mode
-  3            /usr/lib/jvm/java-17-openjdk-amd64/bin/java      1001      manual mode
+  3            /usr/lib/jvm/java-17-openjdk-amd64/bin/java      1021      manual mode
+  4            /usr/lib/jvm/java-21-openjdk-amd64/bin/java      1001      manual mode
 
 Press <enter> to keep the current choice[*], or type selection number:
 ```
 
-you can set it as the default by entering the selection number for it in the list and pressing Enter. For example, to set Java 17 as the default, you would enter "3" and press **Enter**.
+you can set it as the default by entering the selection number for it in the list and pressing Enter. For example, to set Java 21 as the default, you would enter "4" and press **Enter**.
 
 2. Install `git`:
 
@@ -76,11 +77,10 @@ sudo chmod 666 /var/run/docker.sock
 brew cask
 ```
 
-3. Install Eclipse Temurin 17 via Homebrew cask:
+3. Install openjdk 21 via Homebrew:
 
 ```sh
-brew tap homebrew/cask-versions
-brew install temurin17
+brew install openjdk@21
 ```
 
 4. Verify Installation
@@ -89,11 +89,17 @@ brew install temurin17
 java -version
 ```
 
-Note: In case OpenJDK 17 is not set as your default Java, you can consider including it in your `$PATH` after installation
+Note: In case OpenJDK 21 is not set as your default Java, you can consider including it in your `$PATH` after installation
 
 ```sh
-export PATH="$(/usr/libexec/java_home -v 17)/bin:$PATH"
-export JAVA_HOME="$(/usr/libexec/java_home -v 17)"
+export PATH="$(/usr/libexec/java_home -v 21)/bin:$PATH"
+export JAVA_HOME="$(/usr/libexec/java_home -v 21)"
+```
+
+If java_home doesn't recognize homebrew installed java you can run below cmd to symlink brew installed java path to jvm
+
+```sh
+sudo ln -sfn $(brew --prefix openjdk@21)/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-21.jdk
 ```
 
 ### Tips
