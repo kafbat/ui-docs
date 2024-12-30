@@ -76,8 +76,8 @@ Set up LDAP auth [first](../authentication/ldap-active-directory.md)
 
 ```yaml
        - provider: ldap_ad
-          type: group
-          value: "admin_staff"
+         type: group
+         value: "admin_staff"
 ```
 
 ### Okta
