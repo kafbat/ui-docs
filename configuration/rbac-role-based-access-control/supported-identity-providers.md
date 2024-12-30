@@ -70,6 +70,9 @@ Set up LDAP auth [first](../authentication/ldap-active-directory.md)
         - provider: ldap
           type: group
           value: "admin_staff"
+        - provider: ldap
+          type: user
+          value: "pepega"
 ```
 
 ### Active Directory
@@ -78,6 +81,9 @@ Set up LDAP auth [first](../authentication/ldap-active-directory.md)
        - provider: ldap_ad
          type: group
          value: "admin_staff"
+       - provider: ldap_ad
+         type: user
+         value: "zoidberg"
 ```
 
 ### Okta
