@@ -70,16 +70,20 @@ Set up LDAP auth [first](../authentication/ldap-active-directory.md)
         - provider: ldap
           type: group
           value: "admin_staff"
+        - provider: ldap
+          type: user
+          value: "pepega"
 ```
 
 ### Active Directory
 
-Not yet supported, see [Issue 3741](https://github.com/kafbat/kafka-ui/issues/3741)
-
 ```yaml
-       - provider: ldap_ad # NOT YET SUPPORTED, SEE ISSUE 3741
-          type: group
-          value: "admin_staff"
+       - provider: ldap_ad
+         type: group
+         value: "admin_staff"
+       - provider: ldap_ad
+         type: user
+         value: "zoidberg"
 ```
 
 ### Okta
