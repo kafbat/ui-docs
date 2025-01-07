@@ -73,7 +73,7 @@ A list of supported providers and corresponding subject fetch mechanism:
 * oauth\_github: `user`, `organization`, `team`
 * oauth\_cognito: `user`, `group`
 * ldap: `group`
-* ldap\_ad: (unsupported yet, see [Issue 54](https://github.com/kafbat/kafka-ui/issues/54))
+* ldap\_ad: `user`, `group`
 
 More on identity providers in: [supported-identity-providers.md](supported-identity-providers.md "mention")
 
