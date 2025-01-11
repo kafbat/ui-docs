@@ -72,8 +72,8 @@ A list of supported providers and corresponding subject fetch mechanism:
 * oauth\_google: `user`, `domain`
 * oauth\_github: `user`, `organization`, `team`
 * oauth\_cognito: `user`, `group`
-* ldap: `group`
-* ldap\_ad: (unsupported yet, see [Issue 54](https://github.com/kafbat/kafka-ui/issues/54))
+* ldap: `user`, `group`
+* ldap\_ad: `user`, `group`
 
 More on identity providers in: [supported-identity-providers.md](supported-identity-providers.md "mention")
 
@@ -143,12 +143,18 @@ rbac:
           value: "memelords"
 
         - provider: ldap
+          type: user
+          value: "username"
+        - provider: ldap
           type: group
           value: "admin_staff"
 
-        - provider: ldap_ad # NOT YET SUPPORTED, SEE ISSUE 3741
+        - provider: ldap_ad
           type: user
-          value: "cn=germanosin,dc=planetexpress,dc=com"
+          value: "username"
+        - provider: ldap_ad
+          type: group
+          value: "admin_staff"
 
       permissions:
         - resource: applicationconfig
