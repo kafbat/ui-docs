@@ -6,8 +6,6 @@ Once you installed the prerequisites and cloned the repository, run the followin
 
 ### Step 1 : Build
 
-> Make sure you have ARM supported java installed
-
 > Skip the maven tests as they might not be successful
 
 * Build a docker image with the app
