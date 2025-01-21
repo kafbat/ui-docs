@@ -34,7 +34,7 @@ yamlApplicationConfig:
 
 Install by executing command
 
-> helm install helm-release-name charts/kafka-ui -f values.yml
+> helm install kafbat-ui kafbat-ui/kafka-ui -f values.yml
 
 #### Passing configuration file as ConfigMap
 
@@ -63,7 +63,7 @@ This ConfigMap will be mounted to the Pod
 
 Install by executing the command
 
-> helm install helm-release-name charts/kafka-ui --set yamlApplicationConfigConfigMap.name="kafka-ui-configmap",yamlApplicationConfigConfigMap.keyName="config.yml"
+> helm install kafbat-ui kafbat-ui/kafka-ui --set yamlApplicationConfigConfigMap.name="kafka-ui-configmap",yamlApplicationConfigConfigMap.keyName="config.yml"
 
 #### Passing environment variables as ConfigMap
 
@@ -83,4 +83,4 @@ data:
 
 Install by executing the command
 
-> helm install helm-release-name charts/kafka-ui --set existingConfigMap="kafbat-ui-helm-values"
+> helm install kafbat-ui charts/kafka-ui --set existingConfigMap="kafbat-ui-helm-values"
