@@ -186,7 +186,7 @@ rbac:
 
         - resource: connect
           value: "local"
-          actions: [ view, edit, create, restart, reset_offsets ]
+          actions: [ view, edit, create, delete, restart, reset_offsets ]
         # connectors selector not implemented yet, use connects
         #      selector:
         #        connector:
