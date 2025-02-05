@@ -100,7 +100,7 @@ A list of all the actions for the corresponding resources (please note neither r
 
 * `applicationconfig`: `view`, `edit`
 * `clusterconfig`: `view`, `edit`
-* `topic`: `view`, `create`, `edit`, `delete`, `messages_read`, `messages_produce`, `messages_delete`
+* `topic`: `view`, `create`, `edit`, `delete`, `messages_read`, `messages_produce`, `messages_delete`, `analysis_run`, `analysis_view`
 * `consumer`: `view`, `delete`, `reset_offsets`
 * `schema`: `view`, `create`, `delete`, `edit`, `modify_global_compatibility`
 * `connect`: `view`, `edit`, `create`, `delete`,`restart`
@@ -160,10 +160,10 @@ rbac:
         - resource: applicationconfig
           # value not applicable for applicationconfig
           actions: [ "view", "edit" ] # can be with or without quotes
-      
+
         - resource: clusterconfig
           # value not applicable for clusterconfig
-          actions: [ "view", "edit" ] 
+          actions: [ "view", "edit" ]
 
         - resource: topic
           value: "ololo.*"
@@ -175,6 +175,8 @@ rbac:
             - MESSAGES_READ
             - MESSAGES_PRODUCE
             - MESSAGES_DELETE
+            - ANALYSIS_RUN
+            - ANALYSIS_VIEW
 
         - resource: consumer
           value: "\_confluent-ksql.*"
@@ -219,9 +221,10 @@ rbac:
 
         - resource: topic
           value: ".*"
-          actions: 
+          actions:
             - VIEW
             - MESSAGES_READ
+            - ANALYSIS_VIEW
 
         - resource: consumer
           value: ".*"
@@ -253,7 +256,7 @@ rbac:
       permissions:
         - resource: applicationconfig
           actions: all
-      
+
         - resource: clusterconfig
           actions: all
 
@@ -275,7 +278,7 @@ rbac:
 
         - resource: ksql
           actions: all
-          
+
         - resource: acl
           actions: [ view ]
 
