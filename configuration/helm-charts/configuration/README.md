@@ -4,8 +4,7 @@ Most of the Helm charts parameters are common, follow table describes unique par
 
 #### Kafbat-UI parameters
 
-Please find specific paramater description in helm chart *[README.md](https://github.com/kafbat/helm-charts/blob/main/charts/kafka-ui/README.md)*
-
+Please find specific paramater description in helm chart [CONFIGURATION.md](https://github.com/kafbat/helm-charts/blob/main/charts/kafka-ui/CONFIGURATION.md)
 
 ### Example
 
