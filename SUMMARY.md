@@ -13,7 +13,7 @@
 
 ## 🧱 Development
 
-* [Contributing](development/contributing.md)
+* [🤝🏻 Contributing](development/contributing.md)
 * [Setting up git](development/setting-up-git.md)
 * [Building](development/building/README.md)
   * [Prerequisites](development/building/prerequisites.md)

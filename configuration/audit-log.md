@@ -15,7 +15,7 @@ kafka:
         console-audit-enabled: true
         topic: '__kui-audit-log' # default name
         audit-topic-properties: # any kafka topic properties in format of a map
-          - retention.ms: 43200000
+          retention.ms: 43200000
         audit-topics-partitions: 1 # how many partitions, default is 1
         level: all # either ALL or ALTER_ONLY (default). ALL will log all read operations.
 ```

@@ -1,4 +1,4 @@
-# Contributing
+# 🤝🏻 Contributing
 
 This guide aims to walk you through the process of working on issues and Pull Requests (PRs).
 
@@ -54,8 +54,7 @@ Generally speaking, it is a good idea to add a group/type prefix to a branch; e.
 Here is a list of good examples:\
 `issues/123`\
 `feature/feature_name`\
-`bugfix/fix_thing`\
-
+`bugfix/fix_thing`\\
 
 ### Code style
 
@@ -65,8 +64,7 @@ You can import it into IntelliJ IDEA via Checkstyle plugin.
 ### Naming conventions
 
 REST paths should be written in **lowercase** and consist of **plural** nouns only.\
-Also, multiple words that are placed in a single path segment should be divided by a hyphen (`-`).\
-
+Also, multiple words that are placed in a single path segment should be divided by a hyphen (`-`).\\
 
 Query variable names should be formatted in `camelCase`.
 
