@@ -106,6 +106,8 @@ A list of all the actions for the corresponding resources (please note neither r
 * `connect`: `view`, `edit`, `create`, `delete`,`restart`
 * `ksql`: `execute`
 * `acl`: `view`, `edit`
+* `audit`: `view`
+* ~~`client_quotas`: `view`, `edit`~~ — not yet implemented
 
 ## Example file
 
