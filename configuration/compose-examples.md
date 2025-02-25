@@ -4,10 +4,7 @@ description: A list of ready-to-go docker compose files for various setup scenar
 
 # Setup example configs
 
-Check our basic config examples:
+Check our basic config examples: [DOCKER\_COMPOSE.MD](https://github.com/kafbat/kafka-ui/blob/main/documentation/compose/DOCKER_COMPOSE.md)
 
-{% @github-files/github-code-block %}
+And our repo with more advanced examples: [https://github.com/kafbat/ui-config-examples](https://github.com/kafbat/ui-config-examples)
 
-And our repo with more advanced examples:
-
-{% @github-files/github-code-block %}
