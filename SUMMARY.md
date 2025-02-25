@@ -36,7 +36,7 @@
 
 * [Configuration wizard](configuration/configuration-wizard.md)
 * [Configuration file](configuration/configuration-file.md)
-* [Compose examples](configuration/compose-examples.md)
+* [Setup example configs](configuration/compose-examples.md)
 * [Helm charts](configuration/helm-charts/README.md)
   * [Quick start](configuration/helm-charts/quick-start.md)
   * [Configuration](configuration/helm-charts/configuration/README.md)
@@ -53,7 +53,7 @@
   * [AWS IAM](configuration/authentication/aws-iam.md)
   * [LDAP / Active Directory](configuration/authentication/ldap-active-directory.md)
   * [SSO Guide](configuration/authentication/sso-guide.md)
-  * [SASL\_SCRAM](configuration/authentication/sasl\_scram.md)
+  * [SASL\_SCRAM](configuration/authentication/sasl_scram.md)
 * [RBAC (Role based access control)](configuration/rbac-role-based-access-control/README.md)
   * [Supported Identity Providers](configuration/rbac-role-based-access-control/supported-identity-providers.md)
 * [Data masking](configuration/data-masking.md)
