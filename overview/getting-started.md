@@ -27,7 +27,7 @@ services:
       - ~/kui/config.yml:/etc/kafkaui/dynamic_config.yaml
 ```
 
-Please refer to our [configuration](broken-reference) page to proceed with further app configuration.
+Please refer to our [configuration](https://ui.docs.kafbat.io/configuration/configuration-file) page to proceed with further app configuration.
 
 ### Some useful configuration-related links
 
