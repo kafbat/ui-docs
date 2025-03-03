@@ -1,10 +1,11 @@
 
 # Goals
 
-This configuration provide complexe configuration to do SASL_SSL with Oauthbearer configuration between the UI Kafka Client and a Kafka Cluster with jwt and scope validation.
-This use a kafka Strimzi distribution, the only difference is the callback handler class used. You can replace it with the default org.apache or confluent library, or even your own
+This configuration provides a complex setup for enabling SASL_SSL with OAUTHBEARER authentication between a UI Kafka client and a Kafka cluster, including JWT and scope validation.
+It uses the RedHat Kafka distribution called strimzi, that work like any kafka cluster excpet it use a specific callback handler class for authentication, which can be replaced with the default org.apache or Confluent library, or even a custom implementation.
+Additionally, the Schema Registry used in this setup is the Red Hat distribution, Apicurio Registry.
 
-The prerequesit at thisare:
+The prerequesit at this are:
  - A kubernet secret with your kafka user/password (given by your authent server for example) :
 
 ```yaml
@@ -57,14 +58,10 @@ type: Opaque
     spec:
       containers:
         - env:
-            - name: KAFKA_CLUSTERS_0_READONLY
-              value: "false"
             - name: KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS
               value: broker-kafka-extoauth-bootstrap:9096
             - name: KAFKA_CLUSTERS_0_ZOOKEEPER
               value: broker-zookeeper-client:2181
-            - name: KAFKA_CLUSTERS_0_PROPERTIES_ENDPOINT_IDENTIFICATION_ALGORITHM
-              value: ""
             - name: JAVA_OPTS
               value: -Djavax.net.ssl.trustStore=/var/run/secrets/truststore.jks -Djavax.net.ssl.trustStorePassword=changeit
             - name: KAFKA_CLUSTERS_0_SCHEMAREGISTRY
@@ -269,11 +266,3 @@ data:
           type: role
           value: ADgroupIntegration
 ```
-
-
-
-
-
-
-
-
