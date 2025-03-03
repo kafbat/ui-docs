@@ -6,10 +6,6 @@ Once you installed the prerequisites and cloned the repository, run the followin
 
 ### Step 1 : Build
 
-> _**NOTE:**_ If you are an macOS M1 User then please keep in mind below things
-
-> Make sure you have ARM supported java installed
-
 > Skip the maven tests as they might not be successful
 
 * Build a docker image with the app
@@ -37,8 +33,6 @@ If this step is successful, it should create a docker image named `ghcr.io/kafba
 ### Step 2 : Run
 
 **Using Docker Compose**
-
-> _**NOTE:**_ If you are an macOS M1 User then you can use arm64 supported docker compose script `.dev/dev_arm64.yaml`
 
 * Start the app using docker image built in step 1 along with Kafka clusters:
 
