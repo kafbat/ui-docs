@@ -42,10 +42,6 @@ environment: [
       name: "KAFKA_CLUSTERS_0_PROPERTIES_SASL_JAAS_CONFIG",
       value: "software.amazon.msk.auth.iam.IAMLoginModule required awsDebugCreds=true;"
     },
-    {
-      name: "LOGGING_LEVEL_COM_PROVECTUS",
-      value: "debug"
-    },
 ],
 ```
 
