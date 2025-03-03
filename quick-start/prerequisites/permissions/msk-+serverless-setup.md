@@ -11,6 +11,42 @@ KAFKA_CLUSTERS_0_PROPERTIES_SASL_JAAS_CONFIG='software.amazon.msk.auth.iam.IAMLo
 KAFKA_CLUSTERS_0_PROPERTIES_SASL_CLIENT_CALLBACK_HANDLER_CLASS='software.amazon.msk.auth.iam.IAMClientCallbackHandler'
 ```
 
+Example ECS service configuration:
+```typescript
+environment: [
+    {
+      name: "KAFKA_CLUSTERS_0_NAME",
+      value: config.mskClusterName
+    },
+    {
+      name: "KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS",
+      value: config.mskBootstrapServers
+    },
+    {
+      name: "KAFKA_CLUSTERS_0_DISABLELOGDIRSCOLLECTION",
+      value: "true"
+    },
+    {
+      name: "KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL",
+      value: "SASL_SSL"
+    },
+    {
+      name: "KAFKA_CLUSTERS_0_PROPERTIES_SASL_MECHANISM",
+      value: "AWS_MSK_IAM"
+    },
+    {
+      name: "KAFKA_CLUSTERS_0_PROPERTIES_SASL_CLIENT_CALLBACK_HANDLER_CLASS",
+      value: "software.amazon.msk.auth.iam.IAMClientCallbackHandler"
+    },
+    {
+      name: "KAFKA_CLUSTERS_0_PROPERTIES_SASL_JAAS_CONFIG",
+      value: "software.amazon.msk.auth.iam.IAMLoginModule required awsDebugCreds=true;"
+    },
+],
+```
+
+
+
 ### Creating an instance
 
 1. Go to the MSK page
