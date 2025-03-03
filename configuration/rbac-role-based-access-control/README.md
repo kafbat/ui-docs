@@ -36,7 +36,7 @@ Alternatively, you can append the roles file contents to your main config file.
 
 #### Clusters
 
-In the roles file we define roles, duh. Every each role has access to defined clusters:
+In the roles file we define roles, duh. Every role has access to defined clusters:
 
 ```
 rbac:
