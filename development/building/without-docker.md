@@ -22,7 +22,7 @@ java -Dspring.config.additional-location=<path-to-application-local.yml> --add-o
 
 > _**NOTE:**_ If you want to get kafbat-ui up and running locally quickly without building the jar file manually, then just follow Running Without Docker Quickly
 
-> Comment out `docker-maven-plugin` plugin in `api` module `pom.xml`
+Proceed with building instructions from [[with-docker]] and disable/remove `build-docker-images` flag.
 
 * Command to build the jar
 
