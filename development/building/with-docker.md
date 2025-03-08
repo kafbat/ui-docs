@@ -6,30 +6,21 @@ Once you installed the prerequisites and cloned the repository, run the followin
 
 ### Step 1 : Build
 
-> Skip the maven tests as they might not be successful
-
 * Build a docker image with the app
 
 ```
-./mvnw clean install -Pprod
+./gradlew clean build \  
+# -x skips goals, in this cases tests. Tests take time, run them separately if needed.
+-x test \
+# building an app without frontend part could be useful for developing frontend or for using the app like an API client
+-Pinclude-frontend=true \
+# skip building a docker image if you only need a jar
+-Pbuild-docker-images=true \
+# version will be displayed in UI and used for tagging docker image. You can remove it.
+-Pversion=<version>
 ```
 
-* if you need to build the frontend module, go to
-  * frontend-build-documentation
-* In case you want to build `api` module by skipping the tests
-
-```
-./mvnw clean install -Dmaven.test.skip=true -Pprod
-```
-
-* To build only the `api` module you can use this command:
-
-```
-./mvnw -f api/pom.xml clean install -Pprod -DskipUIBuild=true
-```
-
-If this step is successful, it should create a docker image named `ghcr.io/kafbat/kafka-ui` with `latest` tag on your local machine except macOS M1.
-
+A successful build should produce a docker image named `ghcr.io/kafbat/kafka-ui` with whatever version you've supplied.
 ### Step 2 : Run
 
 **Using Docker Compose**
@@ -37,7 +28,7 @@ If this step is successful, it should create a docker image named `ghcr.io/kafba
 * Start the app using docker image built in step 1 along with Kafka clusters:
 
 ```
-docker-compose -f ./documentation/compose/kafbat-ui.yaml up -d
+docker-compose -f ./.dev/dev.yaml up -d
 ```
 
 **Using Spring Boot Run**
@@ -51,11 +42,11 @@ docker-compose -f ./documentation/compose/kafka-clusters-only.yaml up -d
 * Then start the app.
 
 ```
-./mvnw spring-boot:run -Pprod
+./gradlew bootRun -x test
 
 # or
 
-./mvnw spring-boot:run -Pprod -Dspring.config.location=file:///path/to/conf.yaml
+./gradlew bootRun -x test -Dspring.config.location=file:///path/to/conf.yaml
 ```
 
 **Running in kubernetes**
@@ -63,8 +54,8 @@ docker-compose -f ./documentation/compose/kafka-clusters-only.yaml up -d
 * Using Helm Charts
 
 ```
-helm repo add kafbat-ui https://kafbat.github.io/helm-charts
-helm install kafka-ui kafka-ui/kafka-ui
+helm repo add kafbat https://ui.charts.kafbat.io
+helm install kafbat-ui kafbat/kafka-ui
 ```
 
 To read more please follow to chart documentation.
