@@ -16,14 +16,49 @@ Using Kafbat, you can easily integrate [ksqlDB](https://github.com/confluentinc/
 
 ## Configuration
 
-There are two main ways to add KSQL configuration in kafka-ui:
+The ksqlDB configuration requires the following basic settings to access the ksqlDB server from Kafbat UI:
 
-1. **Helm Chart Method**: Modify the `configMap` settings through the helm chart using the `yamlApplicationConfig` value.
-2. **Environment Variables Method**: Directly add environment variables to the `pod` in the deployment. This configuration method can also be used for containers running in docker or docker compose.
+```yaml
+ksqldbServer: http://my-ksql.data.svc.cluster.local:8088  # ksqlDB server URL
+ksqldbServerSsl:                                          # SSL settings (optional)
+  keystoreLocation: /path/to/keystore.jks
+  keystorePassword: changeit
+ksqldbServerAuth:                                         # Auth settings (optional)
+  username: ksql_user
+  password: ksql_password
+```
 
-Use the method that best suits your environment. For example, if you are deploying in a Kubernetes environment, modifying the `configMap` settings through the helm chart might be more suitable. Alternatively, for a simpler setup or local development, directly adding environment variables to the `pod` in the deployment could be more convenient.
+You can apply this configuration to Kafbat UI in two ways:
 
-### helm
+1. **Using Docker Compose** (Recommended for local development)
+   - Set these values as environment variables in your docker-compose.yml
+   - See the example in the "Environment Variables" section below
+
+2. **Using Helm** (For Kubernetes deployments)
+   - Add these values in the `yamlApplicationConfig` section of your values.yaml
+   - See the example in the "Helm" section below
+
+### Docker Compose
+
+If you are using docker compose, you can set the environment variables in your docker-compose.yml file to configure ksqlDB.
+
+```bash
+version: '2'
+services:
+  kafbat-ui:
+    container_name: kafbat-ui
+    image: ghcr.io/kafbat/kafka-ui:latest
+    ports:
+      - 8080:8080
+    environment:
+      - KAFKA_CLUSTERS_0_KSQLDBSERVER=http://my-ksql.data.svc.cluster.local:8088
+      - KAFKA_CLUSTERS_0_KSQLDBSERVERSSL_KEYSTORELOCATION=/etc/security/ksql/keystore.jks
+      - KAFKA_CLUSTERS_0_KSQLDBSERVERSSL_KEYSTOREPASSWORD=changeit
+      - KAFKA_CLUSTERS_0_KSQLDBSERVERAUTH_USERNAME=ksql_user
+      - KAFKA_CLUSTERS_0_KSQLDBSERVERAUTH_PASSWORD=ksql_password
+```
+
+### Helm
 
 ksqlDB configuration is specified in `yamlApplicationConfig` section of `values.yaml` file.
 
@@ -52,35 +87,5 @@ This table outlines the configuration keys needed to set up ksqlDB with Kafka UI
 | `kafka.clusters.ksqldbServerSsl.keystorePassword` | `string` | `changeit` | Password for the keystore file, used for SSL authentication. |
 | `kafka.clusters.ksqldbServerAuth.username` | `string` | `ksql_user` | Username for authenticating with the KSQL server. |
 | `kafka.clusters.ksqldbServerAuth.password` | `string` | `ksql_password` | Password for authenticating with the KSQL server. |
-
-### Environment variables
-
-Explicitly set the following environment variables within the deployment for Kafka UI. These variables configure the connection to the ksqlDB server.
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: kafka-ui
-spec:
-  template:
-    spec:
-      containers:
-        - name: kafka-ui
-          # ... omitted for brevity ...
-          env:
-            - name: KAFKA_CLUSTERS_0_KSQLDBSERVER
-              value: http://my-ksql.data.svc.cluster.local:8088
-            - name: KAFKA_CLUSTERS_0_KSQLDBSERVERSSL_KEYSTORELOCATION
-              value: /etc/security/ksql/keystore.jks
-            - name: KAFKA_CLUSTERS_0_KSQLDBSERVERSSL_KEYSTOREPASSWORD
-              value: changeit
-            - name: KAFKA_CLUSTERS_0_KSQLDBSERVERAUTH_USERNAME
-              value: ksql_user
-            - name: KAFKA_CLUSTERS_0_KSQLDBSERVERAUTH_PASSWORD
-              value: ksql_password
-```
-
-This approach can also be applied in docker compose using environment variables with the same names. Check the ksqlDB setup example for docker compose at this [GitHub link](https://github.com/kafbat/kafka-ui/blob/main/documentation/compose/kafka-ssl-components.yaml).
 
 For detailed schema structure of `yamlApplicationConfig` values in kafka-ui chart, refer to the [kafbat-ui-api.yaml](https://github.com/kafbat/kafka-ui/blob/main/contract/src/main/resources/swagger/kafbat-ui-api.yaml) file.
