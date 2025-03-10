@@ -12,4 +12,17 @@ In order to enable basic username+passworda authentication add these properties:
       SPRING_SECURITY_USER_PASSWORD: pass
 ```
 
+YAML config counterpart:
+
+```
+auth.
+  type: LOGIN_FORM
+
+spring:
+  security:
+    user:
+      name: admin
+      password: pass
+```
+
 Please note that basic auth is not compatible with neither any other auth method nor RBAC.
