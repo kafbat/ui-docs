@@ -64,6 +64,19 @@ A role also has a list of _subjects_ which are the entities we will use to assig
           value: "Haarolean"
 ```
 
+The subject value is either a fixed string or a regular expression identifying a subject. To use regular expression, you must set `isRegex: true`.
+Regular expression works for any combination of `provider` and `type`.
+In this example, we define a role `admins` that will contain all the users with an oauth role ending with `-ADMIN`.
+
+```
+    - name: "admins"
+      subjects:
+        - provider: oauth
+          type: role
+          value: ".*-ADMIN"
+          isRegex: true
+```
+
 #### Providers
 
 A list of supported providers and corresponding subject fetch mechanism:
