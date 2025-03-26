@@ -83,4 +83,4 @@ data:
 
 Install by executing the command
 
-> helm install kafbat-ui charts/kafka-ui --set existingConfigMap="kafbat-ui-helm-values"
+> helm install kafbat-ui kafbat-ui/kafka-ui --set existingConfigMap="kafbat-ui-helm-values"
