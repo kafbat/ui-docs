@@ -10,7 +10,7 @@ Go to the AWS Marketplace website and sign in to your account.
 
 ### Step 2: Find Kafbat UI
 
-Either use the search bar to find "Kafbat UI" or go to [marketplace product page](https://aws.amazon.com/marketplace/pp/prodview-ogtt5hfhzkq6a).
+Either use the search bar to find "Kafbat UI" or go to [marketplace product page](https://aws.amazon.com/marketplace/pp/prodview-6tdqqzzjwmejq).
 
 ### Step 3: Subscribe and Configure
 
