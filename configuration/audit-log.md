@@ -19,3 +19,7 @@ kafka:
         audit-topics-partitions: 1 # how many partitions, default is 1
         level: all # either ALL or ALTER_ONLY (default). ALL will log all read operations.
 ```
+
+## Note
+
+If you create the Audit Topic manually, the topic should not be compacted
