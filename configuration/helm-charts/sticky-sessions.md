@@ -6,7 +6,7 @@ The solution for this would be using sticky session/session affinity.
 
 An example:
 
-```
+```properties
     nginx.ingress.kubernetes.io/affinity: cookie
     nginx.ingress.kubernetes.io/affinity-mode: balanced
     nginx.ingress.kubernetes.io/session-cookie-expires: "172800"

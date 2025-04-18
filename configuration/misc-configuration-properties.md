@@ -10,7 +10,7 @@ A reminder: any of these properties can be converted into yaml config properties
 
 becomes
 
-```
+```yaml
 kafka:
   clusters:
     - bootstrapServers: xxx

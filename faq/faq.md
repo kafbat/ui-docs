@@ -48,7 +48,7 @@ Sure! Swagger declaration is located [here](https://github.com/kafbat/kafka-ui/b
 
 ### My OIDC / OAuth provider uses self-signed certificates, how do I add them to the truststore?
 
-```
+```yaml
 server:
   ssl:
     trust-store: classpath:keycloak-truststore.jks

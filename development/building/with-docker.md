@@ -8,7 +8,7 @@ Once you installed the prerequisites and cloned the repository, run the followin
 
 * Build a docker image with the app
 
-```
+```bash
 ./gradlew clean build \  
 # -x skips goals, in this cases tests. Tests take time, run them separately if needed.
 -x test \
@@ -27,7 +27,7 @@ A successful build should produce a docker image named `ghcr.io/kafbat/kafka-ui`
 
 * Start the app using docker image built in step 1 along with Kafka clusters:
 
-```
+```bash
 docker-compose -f ./.dev/dev.yaml up -d
 ```
 
@@ -35,13 +35,13 @@ docker-compose -f ./.dev/dev.yaml up -d
 
 * If you want to start only kafka clusters (to run the `kafbat-ui` app via `spring-boot:run`):
 
-```
+```bash
 docker-compose -f ./documentation/compose/kafka-clusters-only.yaml up -d
 ```
 
 * Then start the app.
 
-```
+```bash
 ./gradlew bootRun -x test
 
 # or
@@ -53,7 +53,7 @@ docker-compose -f ./documentation/compose/kafka-clusters-only.yaml up -d
 
 * Using Helm Charts
 
-```
+```bash
 helm repo add kafbat https://ui.charts.kafbat.io
 helm install kafbat-ui kafbat/kafka-ui
 ```

@@ -109,7 +109,7 @@ kafka:
 
 Same configuration in env-vars fashion:
 
-```
+```properties
 ...
 KAFKA_CLUSTERS_0_MASKING_0_TYPE: REMOVE
 KAFKA_CLUSTERS_0_MASKING_0_FIELDS_0: "id"

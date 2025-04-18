@@ -6,7 +6,7 @@ Logging can be done to either kafka topic and/or console.
 
 See all the available configuration properties:
 
-```
+```yaml
 kafka:
   clusters:
     - name: local

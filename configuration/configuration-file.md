@@ -16,11 +16,19 @@ Rather than writing your config from a scratch, it would be more convenient to u
 
 #### Providing a config path for the app instance:
 
-**Docker**: `docker run -it -p 8080:8080 -e spring.config.additional-location=/tmp/config.yml -v /tmp/kui/config.yml:/tmp/config.yml ghcr.io/kafbat/kafka-ui`
+**Docker**: 
+
+```bash
+docker run -it \
+  -p 8080:8080 \
+  -e spring.config.additional-location=/tmp/config.yml \
+  -v /tmp/kui/config.yml:/tmp/config.yml \
+  ghcr.io/kafbat/kafka-ui
+```
 
 **Docker compose**:&#x20;
 
-```
+```yaml
 services:
   kafbat-ui:
     container_name: kafbat-ui

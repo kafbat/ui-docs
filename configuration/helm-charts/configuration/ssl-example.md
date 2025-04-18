@@ -9,14 +9,14 @@ To implement SSL for kafbat-ui you need to provide JKS files into the pod. Here 
 To create configmap use following command.\
 
 
-```
+```bash
 kubectl create configmap ssl-files --from-file=kafka.truststore.jks --from-file=kafka.keystore.jks
 ```
 
 If you have specified namespace use command.\
 
 
-```
+```bash
 kubectl create configmap ssl-files --from-file=kafka.truststore.jks --from-file=kafka.keystore.jks -n {{namespace}
 ```
 
@@ -26,7 +26,7 @@ kubectl create configmap ssl-files --from-file=kafka.truststore.jks --from-file=
 
 Encode secret with base64(You can use this tool https://www.base64encode.org/). Create secret.yaml file with the following content
 
-```
+```yml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -41,7 +41,7 @@ data:
 
 ### Create ssl-values.yaml file with the following content.
 
-```
+```yml
 existingSecret: "ssl-secret"
 
 
@@ -64,12 +64,12 @@ volumes:
 
 ### Install chart with command
 
-```
+```bash
 helm install kafbat-ui kafbat-ui/helm-charts -f ssl-values.yaml
 ```
 
 If you have specified namespace for configmap and secret please use this command
 
-```
+```bash
 helm install kafbat-ui kafbat-ui/helm-charts -f ssl-values.yaml -n {namespace}
 ```

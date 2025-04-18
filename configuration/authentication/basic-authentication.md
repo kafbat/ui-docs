@@ -6,7 +6,7 @@ description: Basic username+password authentication
 
 In order to enable basic username+passworda authentication add these properties:
 
-```
+```properties
       AUTH_TYPE: "LOGIN_FORM"
       SPRING_SECURITY_USER_NAME: admin
       SPRING_SECURITY_USER_PASSWORD: pass
@@ -14,8 +14,8 @@ In order to enable basic username+passworda authentication add these properties:
 
 YAML config counterpart:
 
-```
-auth.
+```yaml
+auth:
   type: LOGIN_FORM
 
 spring:

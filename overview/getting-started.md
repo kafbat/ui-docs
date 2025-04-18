@@ -4,7 +4,7 @@ To run Kafbat UI, you can use either a pre-built Docker image or build it (or a 
 
 ### Quick start (Demo run)
 
-```
+```bash
 docker run -it -p 8080:8080 -e DYNAMIC_CONFIG_ENABLED=true ghcr.io/kafbat/kafka-ui
 ```
 
@@ -14,7 +14,7 @@ The command is sufficient to try things out. When you're done trying things out,
 
 ### Persistent installation
 
-```
+```yaml
 services:
   kafbat-ui:
     container_name: kafbat-ui
