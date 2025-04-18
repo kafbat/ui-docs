@@ -22,7 +22,7 @@ kafka:
 
 ### Note
 
-If you create the Audit Topic manually, it  **should not** be compacted, as the documents do not have a key, which is required for Kafka topic compaction.
+If you create the Audit Topic manually, it  **should not** be compacted, as the audit documents do not have a key, which is required for Kafka topic compaction.
 
 Other than **compaction**, the Kafka UI does not expect specific requirements for additional topic properties. However, as always, consider configuring the following:
 
