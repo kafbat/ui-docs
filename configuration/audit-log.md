@@ -20,6 +20,11 @@ kafka:
         level: all # either ALL or ALTER_ONLY (default). ALL will log all read operations.
 ```
 
-## Note
+### Note
 
-If you create the Audit Topic manually, the topic should not be compacted
+If you create the Audit Topic manually, it  **should not** be compacted, as the audit documents do not have a key, which is required for Kafka topic compaction.
+
+Other than **compaction**, the Kafka UI does not expect specific requirements for additional topic properties. However, as always, consider configuring the following:
+
+- **Retention period** How long the data should be stored in Kafka.  
+- **Number of partitions** This affects parallelism and how the data will be consumed.
