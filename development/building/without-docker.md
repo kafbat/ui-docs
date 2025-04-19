@@ -12,7 +12,7 @@ Once you installed the prerequisites and cloned the repository, run the followin
 
 **Execute the jar**
 
-```
+```bash
 java -Dspring.config.additional-location=<path-to-application-local.yml> --add-opens java.rmi/javax.rmi.ssl=ALL-UNNAMED -jar <path-to-kafbat-ui-jar>
 ```
 

@@ -2,7 +2,7 @@
 
 Set your git credentials:
 
-```
+```bash
 git config --global user.name "Mona Lisa"
 git config --global user.email "monalisa@louvre.net"
 ```

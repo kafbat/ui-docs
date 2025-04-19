@@ -4,7 +4,7 @@ This guide has been written for MSK Serverless but is applicable for MSK in gene
 
 ### Authentication options for Kafbat-UI:
 
-```
+```properties
 KAFKA_CLUSTERS_0_PROPERTIES_SECURITY_PROTOCOL=SASL_SSL
 KAFKA_CLUSTERS_0_PROPERTIES_SASL_MECHANISM=AWS_MSK_IAM
 KAFKA_CLUSTERS_0_PROPERTIES_SASL_JAAS_CONFIG='software.amazon.msk.auth.iam.IAMLoginModule required;'
@@ -42,10 +42,8 @@ environment: [
       name: "KAFKA_CLUSTERS_0_PROPERTIES_SASL_JAAS_CONFIG",
       value: "software.amazon.msk.auth.iam.IAMLoginModule required awsDebugCreds=true;"
     },
-],
+]
 ```
-
-
 
 ### Creating an instance
 
@@ -63,7 +61,7 @@ environment: [
 3. Click "JSON"
 4. Paste the following policy example in the editor, and replace "MSK ARN" with the ARN of your MSK cluster
 
-```
+```json
 {
     "Version": "2012-10-17",
     "Statement": [

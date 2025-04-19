@@ -10,7 +10,7 @@ There are two options:
 
 To set or change resource limits for pods you need to create the file `values.yaml` and add the following lines:
 
-```
+```yaml
 resources:
    limits:
      cpu: 200m
@@ -22,7 +22,7 @@ resources:
 
 Specify `values.yaml` file during chart install
 
-```
+```bash
 helm install kafka-ui kafka-ui/kafka-ui -f values.yaml
 ```
 
@@ -30,6 +30,6 @@ helm install kafka-ui kafka-ui/kafka-ui -f values.yaml
 
 To set limits via CLI you need to specify limits with helm install command.
 
-```
+```bash
 helm install kafka-ui kafka-ui/kafka-ui --set resources.limits.cpu=200m --set resources.limits.memory=512Mi --set resources.requests.memory=256Mi --set resources.requests.cpu=200m 
 ```

@@ -4,7 +4,7 @@ Please ensure the target volume (`~/kui/config.yml`) of your config file does ex
 
 Create a yml file with the following contents:
 
-```
+```yaml
 services:
   kafbat-ui:
     container_name: kafbat-ui
@@ -19,4 +19,6 @@ services:
 
 Run the compose via:
 
-`docker-compose -f <your-file>.yml up -d`
+```bash
+docker-compose -f <your-file>.yml up -d
+```

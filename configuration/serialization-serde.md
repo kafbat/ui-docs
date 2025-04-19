@@ -20,7 +20,7 @@ Base64 (RFC4648) binary data representation. Can be useful in case if the actual
 
 Class name: `io.kafbat.ui.serdes.builtin.HexSerde`
 
-```
+```yaml
 kafka:
   clusters:
     - name: Cluster1

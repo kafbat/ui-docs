@@ -17,7 +17,7 @@ Please replace
 
 #### Running From Docker Image
 
-```
+```bash
 docker run -p 8080:8080 \
     -e KAFKA_CLUSTERS_0_NAME=<KAFKA_NAME> \
     -e KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=<KAFKA_URL> \

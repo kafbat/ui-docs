@@ -17,7 +17,7 @@ First of all, you have to decide if either:
 
 This is how you include one more file to start with a docker-compose example:
 
-```
+```yaml
 services:
   kafbat-ui:
     container_name: kafbat-ui
@@ -38,7 +38,7 @@ Alternatively, you can append the roles file contents to your main config file.
 
 In the roles file we define roles, duh. Every role has access to defined clusters:
 
-```
+```yaml
 rbac:
   roles:
     - name: "memelords"
@@ -53,7 +53,7 @@ rbac:
 
 A role also has a list of _subjects_ which are the entities we will use to assign roles to. They are provider-dependant, in general, they can be users, groups, or some other entities (github orgs, google domains, LDAP queries, etc.) In this example we define a role `memelords` that will contain all the users within the Google domain `memelord.lol` and, additionally, a GitHub user `Haarolean`. You can combine as many subjects as you want within a role.
 
-```
+```yaml
     - name: "memelords"
       subjects:
         - provider: oauth_google
@@ -68,7 +68,7 @@ The subject value is either a fixed string or a regular expression identifying a
 Regular expression works for any combination of `provider` and `type`.
 In this example, we define a role `admins` that will contain all the users with an oauth role ending with `-ADMIN`.
 
-```
+```yaml
     - name: "admins"
       subjects:
         - provider: oauth
@@ -100,7 +100,7 @@ The next thing which is present in your roles file is, surprisingly, permissions
 2. The resource value is either a fixed string or a regular expression identifying a resource. Value is not applicable to `clusterconfig` and `ksql` resources. Please do not fill it out.
 3. Actions It's a list of actions (the possible values depend on the resource, see the lists below) that will be applied to the certain permission. Also, note, there's a special action for any of the resources called "all", it will virtually grant all the actions within the corresponding resource. An example for enabling viewing and creating topics whose name start with "derp":
 
-```
+```yaml
       permissions:
         - resource: topic
           value: "derp.*"
@@ -126,7 +126,7 @@ A list of all the actions for the corresponding resources (please note neither r
 
 **A complete file example:**
 
-```
+```yaml
 rbac:
   roles:
     - name: "memelords"
@@ -222,7 +222,7 @@ rbac:
 
 **A read-only setup:**
 
-```
+```yaml
 rbac:
   roles:
     - name: "readonly"
@@ -260,7 +260,7 @@ rbac:
 
 **An admin-group setup example:**
 
-```
+```yaml
 rbac:
   roles:
     - name: "admins"

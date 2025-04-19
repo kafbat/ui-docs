@@ -10,7 +10,7 @@ Since version 0.6 we added an ability to change cluster configs in runtime. This
 
 Sample docker compose configuration:
 
-```
+```yaml
 services:
   kafbat-ui:
     container_name: kafbat-ui
@@ -23,8 +23,7 @@ services:
       DYNAMIC_CONFIG_ENABLED: 'true'
       KAFKA_CLUSTERS_0_NAME: wizard_test
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka0:29092
-      
-  ... 
+  # ... 
 ```
 
 You can even omit all vars other than `DYNAMIC_CONFIG_ENABLED` to start the application with empty configs and setup it up after startup.

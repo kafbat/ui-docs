@@ -1,6 +1,6 @@
 # LDAP / Active Directory
 
-```
+```yaml
 auth:
   type: LDAP
 spring:

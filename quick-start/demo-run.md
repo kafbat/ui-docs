@@ -8,7 +8,7 @@ description: Quick start (demo run)
 2. Ensure your kafka cluster is available from the machine you're planning to run the app on
 3. Run the following:
 
-```
+```bash
 docker run -it -p 8080:8080 -e DYNAMIC_CONFIG_ENABLED=true ghcr.io/kafbat/kafka-ui
 ```
 

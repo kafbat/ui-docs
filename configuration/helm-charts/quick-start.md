@@ -9,16 +9,16 @@ description: Quick Start with Helm Chart
 1. Clone/Copy Chart to your working directory
 2.  Execute command
 
-    ```
+```bash
     helm repo add kafbat-ui https://kafbat.github.io/helm-charts
     helm install kafbat-ui kafbat-ui/kafka-ui
-    ```
+```
 
 #### Passing Kafbat-UI configuration as Dict
 
 Create values.yml file
 
-```
+```yaml
 yamlApplicationConfig:
   kafka:
     clusters:
@@ -34,13 +34,15 @@ yamlApplicationConfig:
 
 Install by executing command
 
-> helm install kafbat-ui kafbat-ui/kafka-ui -f values.yml
+```bash
+helm install kafbat-ui kafbat-ui/kafka-ui -f values.yml
+```
 
 #### Passing configuration file as ConfigMap
 
 Create config map
 
-```
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -63,13 +65,15 @@ This ConfigMap will be mounted to the Pod
 
 Install by executing the command
 
-> helm install kafbat-ui kafbat-ui/kafka-ui --set yamlApplicationConfigConfigMap.name="kafka-ui-configmap",yamlApplicationConfigConfigMap.keyName="config.yml"
+```bash
+helm install kafbat-ui kafbat-ui/kafka-ui --set yamlApplicationConfigConfigMap.name="kafka-ui-configmap",yamlApplicationConfigConfigMap.keyName="config.yml"
+```
 
 #### Passing environment variables as ConfigMap
 
 Create config map
 
-```
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -80,7 +84,8 @@ data:
   AUTH_TYPE: "DISABLED"
   MANAGEMENT_HEALTH_LDAP_ENABLED: "FALSE" 
 ```
-
 Install by executing the command
 
-> helm install kafbat-ui kafbat-ui/kafka-ui --set existingConfigMap="kafbat-ui-helm-values"
+```bash
+helm install kafbat-ui kafbat-ui/kafka-ui --set existingConfigMap="kafbat-ui-helm-values"
+```

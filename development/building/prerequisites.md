@@ -14,20 +14,25 @@ This page explains how to get the software you need to use on Linux or macOS for
 
 1. Install `OpenJDK 21` package or newer:
 
-```
+```bash
 sudo apt update
 sudo apt install openjdk-21-jdk
 ```
 
-* Check java version using the command `java -version`.
+* Check the java version using the command `java -version`.
 
-```
+```bash
 openjdk version "21.0.5" 2024-10-15
 OpenJDK Runtime Environment (build 21.0.5+8-Ubuntu-2ubuntu120.04)
 OpenJDK 64-Bit Server VM (build 21.0.5+8-Ubuntu-2ubuntu120.04, mixed mode, sharing)
 ```
 
-Note: In case OpenJDK 21 is not set as your default Java, run `sudo update-alternatives --config java` command to list all installed Java versions.
+Note: In case OpenJDK 21 is not set as your default Java, run 
+```bash 
+sudo update-alternatives --config java
+```
+
+command to list all installed Java versions.
 
 ```
 Selection    Path                                            Priority   Status
@@ -45,13 +50,13 @@ you can set it as the default by entering the selection number for it in the lis
 
 2. Install `git`:
 
-```
+```bash
 sudo apt install git
 ```
 
 3. Install `docker`:
 
-```
+```bash
 sudo apt update
 sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -62,7 +67,7 @@ sudo apt -y install docker-ce
 
 To execute the `docker` Command without `sudo`:
 
-```
+```bash
 sudo usermod -aG docker ${USER}
 su - ${USER}
 sudo chmod 666 /var/run/docker.sock
@@ -73,32 +78,32 @@ sudo chmod 666 /var/run/docker.sock
 1. Install [brew](https://brew.sh/).
 2. Install brew cask:
 
-```sh
+```bash
 brew cask
 ```
 
 3. Install openjdk 21 via Homebrew:
 
-```sh
+```bash
 brew install openjdk@21
 ```
 
 4. Verify Installation
 
-```sh
+```bash
 java -version
 ```
 
 Note: In case OpenJDK 21 is not set as your default Java, you can consider including it in your `$PATH` after installation
 
-```sh
+```bash
 export PATH="$(/usr/libexec/java_home -v 21)/bin:$PATH"
 export JAVA_HOME="$(/usr/libexec/java_home -v 21)"
 ```
 
 If java_home doesn't recognize homebrew installed java you can run below cmd to symlink brew installed java path to jvm
 
-```sh
+```bash
 sudo ln -sfn $(brew --prefix openjdk@21)/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-21.jdk
 ```
 
@@ -120,26 +125,26 @@ Edit docker daemon settings within docker dashboard
 
 1. Open the Docker configuration file in a text editor using the following command:
 
-```
+```bash
 sudo nano /etc/default/docker
 ```
 
 2. Add the following line to the file to allocate 4GB of memory to Docker:
 
-```
+```properties
 DOCKER_OPTS="--default-ulimit memlock=-1:-1 --memory=4g --memory-swap=-1"
 ```
 
 3. Save the file and exit the text editor.
 4. Restart the Docker service using the following command:
 
-```
+```bash
 sudo service docker restart
 ```
 
 5. Verify that the memory limit has been set correctly by running the following command:
 
-```
+```bash
 docker info | grep -i memory
 ```
 

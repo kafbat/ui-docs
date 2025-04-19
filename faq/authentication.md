@@ -4,6 +4,6 @@
 
 Add the following env/config property and check your logs upon authentication:
 
-```
+```bash
 LOGGING_LEVEL_ORG_SPRINGFRAMEWORK_SECURITY_LDAP_USERDETAILS: "TRACE"
 ```
