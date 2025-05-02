@@ -1,5 +1,5 @@
 ---
-description: About Kafbat-UI
+description: About Kafbat UI (UI for Apache Kafka)
 ---
 
 # About
