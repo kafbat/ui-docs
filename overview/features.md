@@ -1,9 +1,5 @@
 # Features
 
-Here’s the revised and reorganized feature list with your requested changes:
-
----
-
 * **Topic Insights** – View essential topic details including partition count, replication status, and custom configurations.
 * **Configuration Wizard** – Set up and configure your Kafka clusters directly through the UI.
 * **Multi-Cluster Management** – Monitor and manage all your Kafka clusters in one unified interface.
