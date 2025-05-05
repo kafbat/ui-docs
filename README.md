@@ -1,13 +1,15 @@
 ---
-description: About Kafbat-UI
+description: About Kafbat UI (UI for Apache Kafka)
 ---
 
 # About
 
-**Kafbat UI** is a versatile, fast, and lightweight web UI for managing Apache Kafka® clusters. Built by developers, for developers.
+**Kafbat UI** is a versatile, fast, lightweight, and flexible web interface designed to monitor and manage **Apache Kafka® clusters**. Created by developers for developers, it offers an intuitive way to gain visibility into your data flows, quickly identify and resolve issues, and maintain peak performance.
 
+**Kafbat UI** is completely free and open source.
 
+The streamlined dashboard provides clear insights into vital Kafka metrics—Brokers, Topics, Partitions, Production, and Consumption—making it easier to keep your systems running smoothly.
 
-The app is a free, open-source web UI to monitor and manage Apache Kafka clusters.
+![Demo Kafbat UI for Apache Kafka](https://kafbat.io/images/kafbat.webp)
 
-Kafbat UI is a simple tool that makes your data flows observable, helps find and troubleshoot issues faster and delivers optimal performance. Its lightweight dashboard makes it easy to track key metrics of your Kafka clusters - Brokers, Topics, Partitions, Production, and Consumption.
+Developed by Kafbat, the team includes original contributors to the Apache Kafka UI project, continuing its legacy with a renewed vision. We're committed to evolving the project while staying true to its roots. Special thanks to Provectus for their foundational work, which remains a pillar of our progress and innovation.
