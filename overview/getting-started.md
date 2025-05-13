@@ -12,6 +12,31 @@ Then, access the web UI at [http://localhost:8080](http://localhost:8080)
 
 The command is sufficient to try things out. When you're done trying these things out, you can proceed with a [persistent installation](getting-started.md#persistent-installation)
 
+### Image distribution & Available Container Registries
+
+#### Image types
+
+There are two types of images we publish:
+
+* **Release** images, tagged with `latest` and simultaneously semver tags like `v1.0.0`&#x20;
+* **Snapshot** images for every commit pushed to the main branch, named as the respective commit's short SHA, like `b241abe`. The latest build of the main branch is always tagged as `main` as well
+
+Sometimes, for people who require recent changes that are not yet released, we suggest pulling snapshot images. These are usually safe to use, breaking changes happen rarely. To prevent pulling new versions, you can pin the version using the sha-named tag rather than `main` .
+
+#### Image distribution channels
+
+We publish our container images to these registries:
+
+* GHCR (Github Container Registry) — `ghcr.io/kafbat/kafka-ui:latest`
+* AWS ECR (Elastic Container Registry) — `public.ecr.aws/kafbat/kafka-ui:latest`
+* Docker Hub — `kafbat/kafka-ui:latest`
+
+GHCR is considered the main registry for various reasons, the rest are treated as mirrors. You can use these registries to avoid being ratioed by these services (GHCR requires authentication to pull images, Docker Hub is known to have pull limits).
+
+GHCR contains all our images (release and snapshots), while the others store only release versions.
+
+In the future, we will consider distributing snapshots to all the registries as a separate package.
+
 ### Persistent installation
 
 ```yaml
