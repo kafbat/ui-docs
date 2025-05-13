@@ -37,4 +37,8 @@ Increase `webclient.max-in-memory-buffer-size` property value. Default value is 
 
 ## URLs are invalid/contain ports when behind a reverse proxy
 
-Add the following property `server.forward-headers-strategy=FRAMEWORK`
+Add the following property `server.forward-headers-strategy=FRAMEWORK`&#x20;
+
+## My cluster version is 'Unknown'
+
+You're running a new kafka version. Feel free to raise an issue for us to fix this, or raise a PR updating [this file](https://github.com/kafbat/kafka-ui/blob/main/api/src/main/java/io/kafbat/ui/util/MetadataVersion.java)
