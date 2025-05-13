@@ -8,7 +8,7 @@ This page explains how to get the software you need to use on Linux or macOS for
 * `git` installed
 * `docker` installed
 
-> Note: For contribution, you must have a `github` account.
+> Note: For contributing, you must have a github account to be able to raise PRs.
 
 #### For Linux
 
@@ -27,12 +27,13 @@ OpenJDK Runtime Environment (build 21.0.5+8-Ubuntu-2ubuntu120.04)
 OpenJDK 64-Bit Server VM (build 21.0.5+8-Ubuntu-2ubuntu120.04, mixed mode, sharing)
 ```
 
-Note: In case OpenJDK 21 is not set as your default Java, run 
-```bash 
+Note: In case OpenJDK 21 is not set as your default Java, run
+
+```bash
 sudo update-alternatives --config java
 ```
 
-command to list all installed Java versions.
+to list all installed Java versions.
 
 ```
 Selection    Path                                            Priority   Status
@@ -46,7 +47,7 @@ Selection    Path                                            Priority   Status
 Press <enter> to keep the current choice[*], or type selection number:
 ```
 
-you can set it as the default by entering the selection number for it in the list and pressing Enter. For example, to set Java 21 as the default, you would enter "4" and press **Enter**.
+You can set it as the default by entering the selection number for it in the list and pressing Enter. For example, to set Java 21 as the default, you would enter "4" and press **Enter**.
 
 2. Install `git`:
 
@@ -101,7 +102,7 @@ export PATH="$(/usr/libexec/java_home -v 21)/bin:$PATH"
 export JAVA_HOME="$(/usr/libexec/java_home -v 21)"
 ```
 
-If java_home doesn't recognize homebrew installed java you can run below cmd to symlink brew installed java path to jvm
+If java\_home doesn't recognize homebrew installed java you can run below cmd to symlink brew installed java path to jvm
 
 ```bash
 sudo ln -sfn $(brew --prefix openjdk@21)/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-21.jdk

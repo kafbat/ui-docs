@@ -4,7 +4,9 @@ description: Basic username+password authentication
 
 # Basic Authentication
 
-In order to enable basic username+passworda authentication add these properties:
+Basic authentication supports only one local user. If you need multiple, running a Keycloak instance is the easiest way.
+
+To enable basic username+password authentication, add these properties:
 
 ```properties
       AUTH_TYPE: "LOGIN_FORM"
@@ -25,4 +27,4 @@ spring:
       password: pass
 ```
 
-Please note that basic auth is not compatible with neither any other auth method nor RBAC.
+Please note that basic auth is incompatible with any other auth method or RBAC.

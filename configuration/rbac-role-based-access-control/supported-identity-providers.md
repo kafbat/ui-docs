@@ -8,7 +8,7 @@ description: The list of supported auth providers for RBAC
 
 Any OAuth provider not on the list of all providers below this one.
 
-Set up the auth itself first, docs [here](../authentication/oauth2.md) and [here](../authentication/sso-guide.md). **Don't forget "custom-params.type: oauth".**
+Set up the auth itself first, docs [here](../authentication/for-the-ui/oauth2.md) and [here](../authentication/for-the-ui/sso-guide.md). **Don't forget "custom-params.type: oauth".**
 
 ```yaml
       subjects:
@@ -22,7 +22,7 @@ Set up the auth itself first, docs [here](../authentication/oauth2.md) and [here
 
 ### Google
 
-Set up google auth [first](../authentication/oauth2.md#google)
+Set up google auth [first](../authentication/for-the-ui/oauth2.md#google)
 
 ```yaml
         - provider: oauth_google
@@ -35,7 +35,7 @@ Set up google auth [first](../authentication/oauth2.md#google)
 
 ### Github
 
-Set up github auth [first](../authentication/oauth2.md#github)
+Set up github auth [first](../authentication/for-the-ui/oauth2.md#github)
 
 ```yaml
         - provider: oauth_github
@@ -51,7 +51,7 @@ Set up github auth [first](../authentication/oauth2.md#github)
 
 ### Cognito
 
-Set up cognito auth [first](../authentication/oauth2.md#cognito)
+Set up cognito auth [first](../authentication/for-the-ui/oauth2.md#cognito)
 
 ```yaml
         - provider: oauth_cognito
@@ -64,7 +64,7 @@ Set up cognito auth [first](../authentication/oauth2.md#cognito)
 
 ### LDAP
 
-Set up LDAP auth [first](../authentication/ldap-active-directory.md)
+Set up LDAP auth [first](../authentication/for-the-ui/ldap-active-directory.md)
 
 ```yaml
         - provider: ldap
@@ -90,7 +90,7 @@ Set up LDAP auth [first](../authentication/ldap-active-directory.md)
 
 You can map Okta Groups to roles. First, confirm that your okta administrator has included the `group` claim or the groups will not be passed in the auth token.
 
-Ensure `roles-field` in the auth config is set to `groups` and that `groups` is included in the `scope`, see [here](../authentication/oauth2.md#okta) for more details.
+Ensure `roles-field` in the auth config is set to `groups` and that `groups` is included in the `scope`, see [here](../authentication/for-the-ui/oauth2.md#okta) for more details.
 
 Configure the role mapping to the okta group via generic provider mentioned above:
 
@@ -105,7 +105,7 @@ Configure the role mapping to the okta group via generic provider mentioned abov
 
 You can map GoAuthentic Groups to roles. First, confirm that your GoAuthentic administrator has included the `profile` claim or the groups will not be passed in the auth token.
 
-Ensure `roles-field` in the auth config is set to `groups` and that `profile` is included in the `scope`, as groups are passed by default in the profile scope. See [here](../authentication/oauth2.md#goauthentic) for more details.
+Ensure `roles-field` in the auth config is set to `groups` and that `profile` is included in the `scope`, as groups are passed by default in the profile scope. See [here](../authentication/for-the-ui/oauth2.md#goauthentic) for more details.
 
 Configure the role mapping to the GoAuthentic group via generic provider mentioned above:
 

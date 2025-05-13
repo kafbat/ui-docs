@@ -1,4 +1,8 @@
-# SSO Guide
+---
+description: Deprecated. See OAuth2 guides
+---
+
+# SSO Guide (Deprecated)
 
 ## How to configure SSO
 

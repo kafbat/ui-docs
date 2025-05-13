@@ -1,6 +1,6 @@
 # Getting started
 
-To run Kafbat UI, you can use either a pre-built Docker image or build it (or a jar file) yourself.
+To run Kafbat UI, you can use either a pre-built Docker image or build the app yourself.
 
 ### Quick start (Demo run)
 
@@ -8,9 +8,9 @@ To run Kafbat UI, you can use either a pre-built Docker image or build it (or a 
 docker run -it -p 8080:8080 -e DYNAMIC_CONFIG_ENABLED=true ghcr.io/kafbat/kafka-ui
 ```
 
-Then access the web UI at [http://localhost:8080](http://localhost:8080)
+Then, access the web UI at [http://localhost:8080](http://localhost:8080)
 
-The command is sufficient to try things out. When you're done trying things out, you can proceed with a [persistent installation](getting-started.md#persistent-installation)
+The command is sufficient to try things out. When you're done trying these things out, you can proceed with a [persistent installation](getting-started.md#persistent-installation)
 
 ### Persistent installation
 

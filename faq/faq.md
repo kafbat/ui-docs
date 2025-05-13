@@ -2,7 +2,7 @@
 
 ### Basic (username password) authentication
 
-[basic-authentication.md](../configuration/authentication/basic-authentication.md "mention")
+[basic-authentication.md](../configuration/authentication/for-the-ui/basic-authentication.md "mention")
 
 ### Role-based access control
 
@@ -10,7 +10,7 @@
 
 ### OAuth 2
 
-[oauth2.md](../configuration/authentication/oauth2.md "mention")
+[oauth2.md](../configuration/authentication/for-the-ui/oauth2.md "mention")
 
 ### LDAP
 

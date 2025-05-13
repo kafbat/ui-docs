@@ -16,7 +16,7 @@ Base64 (RFC4648) binary data representation. Can be useful in case if the actual
 
 #### Hex
 
-[Hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) binary data representation. Bytes delimiter and case can be configured.&#x20;
+[Hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) binary data representation. Bytes delimiter and case can be configured.
 
 Class name: `io.kafbat.ui.serdes.builtin.HexSerde`
 
@@ -35,7 +35,7 @@ kafka:
 
 #### String
 
-Treats binary data as a string in specified encoding. Default encoding is UTF-8.
+Treats binary data as a string in the specified encoding. Default encoding is UTF-8.
 
 Class name: `io.kafbat.ui.serdes.builtin.StringSerde`
 
@@ -109,7 +109,7 @@ Deserialize-only serde. Decodes protobuf payload without a predefined schema (li
 
 #### SchemaRegistry
 
-SchemaRegistry serde is automatically configured if schema registry properties set on cluster level. But you can add new SchemaRegistry-typed serdes that will connect to another schema-registry instance.
+SchemaRegistry serde is automatically configured if schema registry properties are set on the cluster level. But you can add new SchemaRegistry-typed serdes that will connect to another schema-registry instance.
 
 Class name: `io.kafbat.ui.serdes.builtin.sr.SchemaRegistrySerde`
 
@@ -137,11 +137,9 @@ kafka:
             url:  http://another-yet-schema-registry:8081
 ```
 
-
-
 ### Setting serdes for specific topics
 
-You can specify preferable serde for topics key/value. This serde will be chosen by default in UI on topic's view/produce pages. To do so, set `topicValuesPattern/topicValuesPattern` properties for the selected serde. Kafka-ui will choose a first serde that matches specified pattern.
+You can specify a preferred serde for the topics key/value. This serde will be chosen by default in UI on topic's view/produce pages. To do so, set `topicValuesPattern/topicValuesPattern` properties for the selected serde. Kafka-ui will choose the first serde that matches the specified pattern.
 
 Sample configuration:
 
@@ -162,7 +160,7 @@ kafka:
 
 ### Default serdes
 
-You can specify which serde will be chosen in UI by default if no other serdes selected via `topicKeysPattern/topicValuesPattern` settings.
+You can specify which serde will be chosen in UI by default if no other serdes are selected via `topicKeysPattern/topicValuesPattern` settings.
 
 Sample configuration:
 
@@ -183,11 +181,11 @@ If selected serde couldn't be applied (exception was thrown), then fallback (Str
 
 ### Custom pluggable serde registration
 
-You can implement your own serde and register it in kafbat-ui application. To do so:
+You can implement your serde and register it in the UI. To do so:
 
 1. Add `serde-api` dependency, [link to maven central](https://central.sonatype.com/artifact/io.kafbat.ui/serde-api)
 2. Implement `io.kafbat.ui.serde.api.Serde` interface. See javadoc for implementation requirements.
-3. Pack your serde into uber jar, or provide directory with no-dependency jar and it's dependencies jars
+3. Pack your serde into an uber jar, or provide a directory with no-dependency jar and its dependencies jars
 
 Example pluggable serdes : [kafka-smile-serde](https://github.com/kafbat/ui-serde-smile), [kafka-glue-sr-serde](https://github.com/kafbat/ui-serde-glue)
 

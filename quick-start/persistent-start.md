@@ -1,8 +1,8 @@
-# Persistent start
+# Persisting config
 
-Please ensure the target volume (`~/kui/config.yml`) of your config file does exist.
+Please ensure the target volume (`~/kui/config.yml`) of your config file does exist. If it doesn't, docker will create it as a directory instead of a file, and everything will explode.
 
-Create a yml file with the following contents:
+Create a YAML file with the following contents:
 
 ```yaml
 services:
