@@ -83,7 +83,8 @@ kafka:
               - /path/to/my-protobufs/my.proto
               - /path/to/my-protobufs/another.proto
             # protobufMessageName is the default protobuf type that is used to deserialize
-            # the message's value if the topic is not found in protobufMessageNameByTopic.    
+            # the message's VALUE if the topic is not found in protobufMessageNameByTopic.    
+            # optional, if not set, the first type in the file will be used as default
             protobufMessageName: my.DefaultValType
             # default protobuf type that is used for KEY serialization/deserialization
             # optional
@@ -93,9 +94,6 @@ kafka:
             protobufMessageNameForKeyByTopic:
               topic1: my.KeyType1
               topic2: my.KeyType2
-            # default protobuf type that is used for VALUE serialization/deserialization
-            # optional, if not set - first type in file will be used as default
-            protobufMessageName: my.Type1
             # mapping of topic names to protobuf types, that will be used for VALUES  serialization/deserialization
             # optional
             protobufMessageNameByTopic:
