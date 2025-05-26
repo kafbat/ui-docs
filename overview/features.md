@@ -14,3 +14,4 @@
 * **Custom SerDe Plugin Support** – Use built-in serializers/deserializers like AWS Glue and Smile, or create your own custom plugins.
 * **Role-Based Access Control** – [Manage granular UI permissions](../configuration/rbac-role-based-access-control/) with RBAC.
 * **Data Masking** – [Obfuscate sensitive data](../configuration/data-masking.md) in topic messages to enhance privacy and compliance.
+* **MCP Server** -  [Model Context Protocol](https://modelcontextprotocol.io/introduction) Server
