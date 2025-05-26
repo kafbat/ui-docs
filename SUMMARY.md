@@ -66,5 +66,6 @@
 ## ❓ FAQ
 
 * [Common problems](faq/common-problems.md)
+* [MCP Server](faq/mcp.md)
 * [FAQ](faq/faq.md)
 * [Authentication Issues](faq/authentication.md)
