@@ -205,6 +205,7 @@ rbac:
         - provider: oauth_google  # e.g. oauth_{client_name}, ldap
           type: domain  # domain, organization, user, group
           value: "kafbat.dev"
+          regex: false
       permissions:
         - resource: applicationconfig  # Resource types: applicationconfig, clusterconfig, topic, consumer, schema, connect, ksql, acl, audit
           value: ".*"
