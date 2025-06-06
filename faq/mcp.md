@@ -24,9 +24,9 @@ To configure MCP in VS Code:
 
 2. Open the co-pilot chat window and switch to agent mode.
 
-### Cluade
+### Claude
 
-Cluade supports remote MCP servers **only** with an Enterprise subscription. For basic usage, configure a `mcp-remote` proxy:
+Claude supports remote MCP servers **only** with an Enterprise subscription. For basic usage, configure a `mcp-remote` proxy:
 
 ```json
 {
