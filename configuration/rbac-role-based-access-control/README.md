@@ -116,7 +116,7 @@ A list of all the actions for the corresponding resources (please note neither r
 * `topic`: `view`, `create`, `edit`, `delete`, `messages_read`, `messages_produce`, `messages_delete`, `analysis_run`, `analysis_view`
 * `consumer`: `view`, `delete`, `reset_offsets`
 * `schema`: `view`, `create`, `delete`, `edit`, `modify_global_compatibility`
-* `connect`: `view`, `edit`, `create`, `delete`,`restart`, `reset_offsets`
+* `connect`: `view`, `edit`, `create`, `delete`,`operate`, `reset_offsets`
 * `ksql`: `execute`
 * `acl`: `view`, `edit`
 * `audit`: `view`
@@ -203,7 +203,7 @@ rbac:
 
         - resource: connect
           value: "local"
-          actions: [ view, edit, create, delete, restart, reset_offsets ]
+          actions: [ view, edit, create, delete, operate, reset_offsets ]
         # connectors selector not implemented yet, use connects
         #      selector:
         #        connector:
