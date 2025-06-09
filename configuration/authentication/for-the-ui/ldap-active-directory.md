@@ -20,6 +20,5 @@ If you're running AD rather than LDAP, also add these:
 oauth2:
   ldap:
     activeDirectory: true
-    aсtiveDirectory:
       domain: memelord.lol
 ```
