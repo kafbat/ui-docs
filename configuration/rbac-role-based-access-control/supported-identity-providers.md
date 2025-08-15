@@ -62,6 +62,19 @@ Set up cognito auth [first](../authentication/for-the-ui/oauth2.md#cognito)
           value: "memelords"
 ```
 
+### Azure
+
+Set up AzureAD OAUTH2 auth [first](../authentication/for-the-ui/oauth2.md#azure)
+
+```yaml
+        - provider: oauth
+          type: user
+          value: "zoidberg@memelords.lol"
+        - provider: oauth
+          type: role
+          value: "admin" # From AzureAD Role Claims
+```
+
 ### LDAP
 
 Set up LDAP auth [first](../authentication/for-the-ui/ldap-active-directory.md)

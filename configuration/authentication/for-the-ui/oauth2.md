@@ -110,6 +110,10 @@ auth:
         provider: azure
         issuer-uri: "https://login.microsoftonline.com/{tenant_id}/v2.0"
         jwk-set-uri: "https://login.microsoftonline.com/{tenant_id}/discovery/v2.0/keys"
+        user-name-attribute: email # Needed for RBAC roles matching
+        custom-params: # Needed for RBAC configuration
+          type: oauth
+          roles-field: roles # AzureAD Role Claims 
 ```
 
 ### GitHub
