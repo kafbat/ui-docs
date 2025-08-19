@@ -66,7 +66,7 @@ This ConfigMap will be mounted to the Pod
 Install by executing the command
 
 ```bash
-helm install kafbat-ui kafbat-ui/kafka-ui --set yamlApplicationConfigConfigMap.name="kafka-ui-configmap",yamlApplicationConfigConfigMap.keyName="config.yml"
+helm install kafbat-ui kafbat-ui/kafka-ui --set yamlApplicationConfigConfigMap.name="kafbat-ui-configmap",yamlApplicationConfigConfigMap.keyName="config.yml"
 ```
 
 #### Passing environment variables as ConfigMap
