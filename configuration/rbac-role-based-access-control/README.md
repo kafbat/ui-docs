@@ -62,6 +62,9 @@ A role also has a list of _subjects_ which are the entities we will use to assig
         - provider: oauth_github
           type: user
           value: "Haarolean"
+        - provider: oauth
+          type: role
+          value: "admin"
 ```
 
 The subject value is either a fixed string or a regular expression identifying a subject. To use regular expression, you must set `regex: true`.
@@ -156,6 +159,14 @@ rbac:
         - provider: oauth_cognito
           type: group
           value: "memelords"
+
+      # AzureAD with OAUTH2
+        - provider: role
+          type: user
+          value: "zoidberg@memelords.lol"
+        - provider: oauth
+          type: role
+          value: "admin"
 
         - provider: ldap
           type: user
