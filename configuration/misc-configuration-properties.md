@@ -20,7 +20,7 @@ kafka:
 |-------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `SERVER_SERVLET_CONTEXT_PATH`                         | URI basePath                                                                                                                                                     |
 | `LOGGING_LEVEL_ROOT`                                  | Setting log level (trace, debug, info, warn, error). Default: info                                                                                               |
-| `LOGGING_LEVEL_IO_KAFBAT_UI`                             | Setting log level (trace, debug, info, warn, error). Default: debug                                                                                              |
+| `LOGGING_LEVEL_IO_KAFBAT_UI`                          | Setting log level (trace, debug, info, warn, error). Default: debug                                                                                              |
 | `SERVER_PORT`                                         | Port for the embedded server. Default: `8080`                                                                                                                    |
 | `KAFKA_ADMIN-CLIENT-TIMEOUT`                          | Kafka API timeout in ms. Default: `30000`                                                                                                                        |
 | `KAFKA_CLUSTERS_0_NAME`                               | Cluster name                                                                                                                                                     |
@@ -60,3 +60,6 @@ kafka:
 | `DYNAMIC_CONFIG_ENABLED`                              | Allow to change application config in runtime. Default: false.                                                                                                   |
 | kafka\_internalTopicPrefix                            | Set a prefix for internal topics. Defaults to "\_".                                                                                                              |
 | server.reactive.session.timeout                       | Session timeout. If a duration suffix is not specified, seconds will be used.                                                                                    |
+| `GITHUB_RELEASE_INFO_ENABLED`                         | Enable automatic check for the latest available release via GitHub API. Default: true                                                                            |
+| `GITHUB_RELEASE_INFO_TIMEOUT`                         | Request timeout for automatic release info checks in seconds. Default: 10                                                                                        |
+| `GITHUB_RELEASE_UPDATE_RATE`                          | Refresh rate (caching time) for release info from GitHub in milliseconds, ISO-8601 (e.g. "PT1H") or simple notation ("1h"). Default: 3600000                     |
