@@ -73,6 +73,7 @@ kafka:
       serde:
         - name: ProtobufFile
           properties:
+            className: io.kafbat.ui.serdes.builtin.ProtobufFileSerde
             # protobufFilesDir specifies root location for proto files (will be scanned recursively)
             # NOTE: if 'protobufFilesDir' specified, then 'protobufFile' and 'protobufFiles' settings will be ignored
             protobufFilesDir: "/path/to/my-protobufs"
