@@ -1,9 +1,8 @@
-# MCP Server Setup
+# MCP Server
 
 To enable the MCP server functionality, set the `mcp.enabled` flag to `true`.
 
-Once enabled, you can connect to the Kafbat UI instance using an MCP client at the following SSE endpoint:
-`http://hostname/mcp/sse`.
+Once enabled, you can connect to the Kafbat UI instance using an MCP client at the following SSE endpoint:`http://hostname/mcp/sse`.
 
 ### Visual Studio Code
 

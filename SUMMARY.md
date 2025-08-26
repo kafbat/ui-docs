@@ -60,7 +60,10 @@
   * [Supported Identity Providers](configuration/rbac-role-based-access-control/supported-identity-providers.md)
 * [Data masking](configuration/data-masking.md)
 * [Audit log](configuration/audit-log.md)
-* [Serialization / SerDe](configuration/serialization-serde.md)
+* [Serialization / SerDe](configuration/serialization-serde/README.md)
+  * [Built-In SerDes](configuration/serialization-serde/built-in-serdes.md)
+  * [Pluggable SerDes](configuration/serialization-serde/pluggable-serdes/README.md)
+    * [Building your own pluggable SerDe](configuration/serialization-serde/pluggable-serdes/building-your-own-pluggable-serde.md)
 * [OpenDataDiscovery Integration](configuration/opendatadiscovery-integration.md)
 
 ## ❓ FAQ
