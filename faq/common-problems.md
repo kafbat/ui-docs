@@ -35,7 +35,9 @@ At this stage, the AWS side should have sufficient permission to allow kafbat-ui
 
 Increase `webclient.max-in-memory-buffer-size` property value. Default value is `20MB`.
 
-## URLs are invalid/contain ports when behind a reverse proxy
+## URLs are invalid/contain ports/wrong scheme (http/https) when behind a reverse proxy
+
+If you suffer from wrongfully generated redirect uris when behind a proxy/loadbalancer due to mismatch in public and origin ports/scheme.
 
 Add the following property `server.forward-headers-strategy=FRAMEWORK`&#x20;
 
