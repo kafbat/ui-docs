@@ -16,9 +16,9 @@ spring:
 
 If you're running AD rather than LDAP, also add these:
 
-```yaml
+```
 oauth2:
   ldap:
-    activeDirectory: 
+    activeDirectory: true
       domain: memelord.lol
 ```
