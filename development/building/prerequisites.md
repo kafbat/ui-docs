@@ -4,30 +4,30 @@
 
 This page explains how to get the software you need to use on Linux or macOS for local development.
 
-* `java 21` package or newer
+* `Java 25` package or newer
 * `git` installed
 * `docker` installed
 
-> Note: For contributing, you must have a github account to be able to raise PRs.
+> Note: For contributing, you must have a GitHub account to be able to raise PRs.
 
 #### For Linux
 
-1. Install `OpenJDK 21` package or newer:
+1. Install `OpenJDK 25` package or newer:
 
 ```bash
 sudo apt update
-sudo apt install openjdk-21-jdk
+sudo apt install openjdk-25-jdk
 ```
 
 * Check the java version using the command `java -version`.
 
 ```bash
-openjdk version "21.0.5" 2024-10-15
-OpenJDK Runtime Environment (build 21.0.5+8-Ubuntu-2ubuntu120.04)
-OpenJDK 64-Bit Server VM (build 21.0.5+8-Ubuntu-2ubuntu120.04, mixed mode, sharing)
+openjdk 25.0.1 2025-10-21
+OpenJDK Runtime Environment (build 25.0.1+8-27)
+OpenJDK 64-Bit Server VM (build 25.0.1+8-27, mixed mode, sharing)
 ```
 
-Note: In case OpenJDK 21 is not set as your default Java, run
+Note: In case OpenJDK 25 is not set as your default Java, run
 
 ```bash
 sudo update-alternatives --config java
@@ -43,11 +43,12 @@ Selection    Path                                            Priority   Status
   2            /usr/lib/jvm/java-16-openjdk-amd64/bin/java      1051      manual mode
   3            /usr/lib/jvm/java-17-openjdk-amd64/bin/java      1021      manual mode
   4            /usr/lib/jvm/java-21-openjdk-amd64/bin/java      1001      manual mode
+  5            /usr/lib/jvm/java-25-openjdk-amd64/bin/java      1001      manual mode
 
 Press <enter> to keep the current choice[*], or type selection number:
 ```
 
-You can set it as the default by entering the selection number for it in the list and pressing Enter. For example, to set Java 21 as the default, you would enter "4" and press **Enter**.
+You can set it as the default by entering the selection number for it in the list and pressing Enter. For example, to set Java 25 as the default, you would enter `5` and press <kbd>Enter</kbd>.
 
 2. Install `git`:
 
@@ -83,10 +84,10 @@ sudo chmod 666 /var/run/docker.sock
 brew cask
 ```
 
-3. Install openjdk 21 via Homebrew:
+3. Install openjdk 25 via Homebrew:
 
 ```bash
-brew install openjdk@21
+brew install openjdk@25
 ```
 
 4. Verify Installation
@@ -95,22 +96,22 @@ brew install openjdk@21
 java -version
 ```
 
-Note: In case OpenJDK 21 is not set as your default Java, you can consider including it in your `$PATH` after installation
+Note: In case OpenJDK 25 is not set as your default Java, you can consider including it in your `$PATH` after installation
 
 ```bash
-export PATH="$(/usr/libexec/java_home -v 21)/bin:$PATH"
-export JAVA_HOME="$(/usr/libexec/java_home -v 21)"
+export PATH="$(/usr/libexec/java_home -v 25)/bin:$PATH"
+export JAVA_HOME="$(/usr/libexec/java_home -v 25)"
 ```
 
-If java\_home doesn't recognize homebrew installed java you can run below cmd to symlink brew installed java path to jvm
+If java\_home doesn't recognize homebrew installed java you can run below cmd to symlink brew installed Java path to jvm
 
 ```bash
-sudo ln -sfn $(brew --prefix openjdk@21)/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-21.jdk
+sudo ln -sfn $(brew --prefix openjdk@21)/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-25.jdk
 ```
 
 ### Tips
 
-Consider allocating not less than 4GB of memory for your docker. Otherwise, some apps within a stack (e.g. `kafbat-ui.yaml`) might crash.
+Consider allocating at least 4GB of memory for your docker. Otherwise, some apps within a stack (e.g. `kafbat-ui.yaml`) might crash.
 
 To check how much memory is allocated to docker, use `docker info`.
 
