@@ -148,7 +148,10 @@ rbac:
 
         - provider: oauth_github
           type: organization
-          value: "memelords_team"
+          value: "memelords_org"
+        - provider: oauth_github
+          type: team
+          value: "memelords_org/memelords_team"
         - provider: oauth_github
           type: user
           value: "memelord"
