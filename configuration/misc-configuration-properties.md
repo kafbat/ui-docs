@@ -55,6 +55,7 @@ kafka:
 | `KAFKA_CLUSTERS_0_SSL_TRUSTSTORELOCATION`             | Path to the JKS truststore to communicate to Kafka Connect, SchemaRegistry, KSQL, Metrics                                                                        |
 | `KAFKA_CLUSTERS_0_SSL_TRUSTSTOREPASSWORD`             | Password of the JKS truststore for Kafka Connect, SchemaRegistry, KSQL, Metrics                                                                                  |
 | `KAFKA_CLUSTERS_0_SSL_VERIFYSSL`                      | If set to false, SSL certificate of the host won't be verified. True by default.                                                                                 |
+| `KAFKA_CONFIG_SANITIZER_ENABLED`                      | If set to false, disable configuration sanitizer (secret masking)                                                                                                |
 | `TOPIC_RECREATE_DELAY_SECONDS`                        | Time delay between topic deletion and topic creation attempts for topic recreate functionality. Default: 1                                                       |
 | `TOPIC_RECREATE_MAXRETRIES`                           | Number of attempts of topic creation after topic deletion for topic recreate functionality. Default: 15                                                          |
 | `DYNAMIC_CONFIG_ENABLED`                              | Allow to change application config in runtime. Default: false.                                                                                                   |
