@@ -6,14 +6,14 @@ To implement SSL for kafbat-ui you need to provide JKS files into the pod. Here 
 
 ### Create config map with content from kafka.truststore.jks and kafka.keystore.jks.
 
-To create configmap use following command.\
+To create configmap use following command.
 
 
 ```bash
 kubectl create configmap ssl-files --from-file=kafka.truststore.jks --from-file=kafka.keystore.jks
 ```
 
-If you have specified namespace use command.\
+If you have specified namespace use command.
 
 
 ```bash
@@ -24,7 +24,7 @@ kubectl create configmap ssl-files --from-file=kafka.truststore.jks --from-file=
 
 ### Create secret.
 
-Encode secret with base64(You can use this tool https://www.base64encode.org/). Create secret.yaml file with the following content
+Encode secret with base64(You can use this tool ([https://www.base64encode.org/](https://www.base64encode.org/)). Create secret.yaml file with the following content
 
 ```yml
 apiVersion: v1
