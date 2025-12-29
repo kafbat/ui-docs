@@ -99,7 +99,7 @@ Find the more detailed examples in a full example file lower.
 
 The next thing which is present in your roles file is, surprisingly, permissions. They consist of:
 
-1. Resource Can be one of the: `CLUSTERCONFIG`, `TOPIC`, `CONSUMER`, `SCHEMA`, `CONNECT`, `KSQL`, `ACL`.
+1. Resource Can be one of the: `CLUSTERCONFIG`, `TOPIC`, `CONSUMER`, `SCHEMA`, `CONNECT`, `CONNECTOR`, `KSQL`, `ACL`.
 2. The resource value is either a fixed string or a regular expression identifying a resource. Value is not applicable to `clusterconfig` and `ksql` resources. Please do not fill it out.
 3. Actions It's a list of actions (the possible values depend on the resource, see the lists below) that will be applied to the certain permission. Also, note, there's a special action for any of the resources called "all", it will virtually grant all the actions within the corresponding resource. An example for enabling viewing and creating topics whose name start with "derp":
 
@@ -119,7 +119,8 @@ A list of all the actions for the corresponding resources (please note neither r
 * `topic`: `view`, `create`, `edit`, `delete`, `messages_read`, `messages_produce`, `messages_delete`, `analysis_run`, `analysis_view`
 * `consumer`: `view`, `delete`, `reset_offsets`
 * `schema`: `view`, `create`, `delete`, `edit`, `modify_global_compatibility`
-* `connect`: `view`, `edit`, `create`, `delete`,`operate`, `reset_offsets`
+* `connect`: `view`, `edit`, `create`, `delete`, `operate`, `reset_offsets` — applies to all connectors in a connect cluster
+* `connector`: `view`, `edit`, `create`, `delete`, `operate`, `reset_offsets` — granular per-connector permissions (value format: `connectName/connectorName`)
 * `ksql`: `execute`
 * `acl`: `view`, `edit`
 * `audit`: `view`
@@ -218,11 +219,16 @@ rbac:
         - resource: connect
           value: "local"
           actions: [ view, edit, create, delete, operate, reset_offsets ]
-        # connectors selector not implemented yet, use connects
-        #      selector:
-        #        connector:
-        #          name: ".*"
-        #          class: 'io.kafbat.connectorName'
+
+        # Granular connector-level permissions (value format: connectName/connectorName)
+        - resource: connector
+          value: "local/my-specific-connector"
+          actions: [ view, edit, operate ]
+
+        # Wildcard for all connectors in a connect cluster
+        - resource: connector
+          value: "local/prod-.*"
+          actions: [ view ]
 
         - resource: ksql
           # value not applicable for ksql
