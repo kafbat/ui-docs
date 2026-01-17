@@ -14,6 +14,8 @@ Check the [required permissions](../quick-start/prerequisites/permissions/requir
 
 ## AWS MSK w/ IAM: Access denied
 
+> **Note:** The following links reference the legacy `provectus/kafka-ui` repository from before the project was transferred to Kafbat. The solutions and discussions remain relevant.
+
 https://github.com/provectus/kafka-ui/discussions/1104#discussioncomment-1656843 https://github.com/provectus/kafka-ui/discussions/1104#discussioncomment-2963449 https://github.com/provectus/kafka-ui/issues/2184#issuecomment-1198506124
 
 ## AWS MSK: TimeoutException

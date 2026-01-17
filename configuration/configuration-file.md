@@ -45,7 +45,7 @@ kafka:
       ksqldb-server: http://ksqldb-host:8088
       ksqldb-server-auth:
         username: ksqldb-username
-        password: ksqdb-passsword
+        password: ksqldb-password
       ksqldb-server-ssl:
         keystore-location: path/to/keystore/file.jks
         keystore-password: password
@@ -61,7 +61,7 @@ kafka:
 
       # Custom SerDe (Serializer/Deserializer) for interpreting topic data
       serde:
-        - name: CustomeHexWithEditedDelimiter
+        - name: CustomHexWithEditedDelimiter
           class-name: io.kafbat.ui.serdes.builtin.HexSerde
           file-path: /var/lib/kui-serde/my-kui-serde.jar
           topic-keys-pattern: ".*-events"  # Regex to match applicable topic keys
