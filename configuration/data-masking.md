@@ -53,12 +53,12 @@ non-json string -> ***
 
 #### MASK
 
-Mask target field's values with specified masking characters, recursively (spaces and line separators will be kept as-is). `maskingCharsReplacement` array specifies what symbols will be used to replace upper-case chars (index 0), lower-case chars (index 1), digits (index 2) and other symbols (index 3) correspondingly.
+Mask target field's values with specified masking characters, recursively (spaces and line separators will be kept as-is). `masking-chars-replacement` array specifies what symbols will be used to replace upper-case chars (index 0), lower-case chars (index 1), digits (index 2) and other symbols (index 3) correspondingly.
 
 ```yaml
 - type: MASK
   fields: [ "id", "name" ]
-  maskingCharsReplacement: ["A", "a", "N", "_"]   # optional, default is ["X", "x", "n", "-"]
+  masking-chars-replacement: ["A", "a", "N", "_"]   # optional, default is ["X", "x", "n", "-"]
   ...
 ```
 
@@ -90,21 +90,21 @@ kafka:
       masking:
         - type: REMOVE
           fields: [ "id" ]
-          topicKeysPattern: "events-with-ids-.*"
-          topicValuesPattern: "events-with-ids-.*"
+          topic-keys-pattern: "events-with-ids-.*"
+          topic-values-pattern: "events-with-ids-.*"
           
         - type: REPLACE
           fields: [ "companyName", "organizationName" ]
           replacement: "***MASKED_ORG_NAME***"   #optional
-          topicValuesPattern: "org-events-.*"
+          topic-values-pattern: "org-events-.*"
         
         - type: MASK
           fields: [ "name", "surname" ]
-          maskingCharsReplacement: ["A", "a", "N", "_"]  #optional
-          topicValuesPattern: "user-states"
+          masking-chars-replacement: ["A", "a", "N", "_"]  #optional
+          topic-values-pattern: "user-states"
 
         - type: MASK
-          topicValuesPattern: "very-secured-topic"
+          topic-values-pattern: "very-secured-topic"
 ```
 
 Same configuration in env-vars fashion:

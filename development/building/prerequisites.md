@@ -106,7 +106,7 @@ export JAVA_HOME="$(/usr/libexec/java_home -v 25)"
 If java\_home doesn't recognize homebrew installed java you can run below cmd to symlink brew installed Java path to jvm
 
 ```bash
-sudo ln -sfn $(brew --prefix openjdk@21)/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-25.jdk
+sudo ln -sfn $(brew --prefix openjdk@25)/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-25.jdk
 ```
 
 ### Tips

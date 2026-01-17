@@ -15,8 +15,3 @@ logging:
 ```
 
 Restart the app, upon authenticating your user, grep the logs by `extractor`. The logs are self-descriptive.
-
-
-
-```
-```
