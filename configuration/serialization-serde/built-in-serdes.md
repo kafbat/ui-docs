@@ -125,10 +125,96 @@ kafka:
             # auth properties, optional
             username: nameForAuth
             password: P@ssW0RdForAuth
-        
+
           # and also add another SchemaRegistry serde
         - name: ThirdSchemaRegistry
           className: io.kafbat.ui.serdes.builtin.sr.SchemaRegistrySerde
           properties:
             url:  http://another-yet-schema-registry:8081
+```
+
+##### Avro Display Options
+
+The SchemaRegistry serde supports additional options for controlling how Avro messages are displayed in the UI:
+
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| `showNullValues` | boolean | `false` | When `true`, fields with null values are displayed as `"field": null`. When `false` (default), null fields are omitted from the output. |
+| `useFullyQualifiedNames` | boolean | `false` | When `true`, union types always use fully qualified names (e.g., `{"io.kafbat.test.NestedRecord": {...}}`). When `false` (default), short names are used unless there's a name collision within the union. |
+
+These options can be configured in two ways:
+
+**Option 1: Cluster-level configuration (auto-config)**
+
+When using the auto-configured SchemaRegistry serde, set these properties at the cluster level:
+
+```yaml
+kafka:
+  clusters:
+    - name: Cluster1
+      schemaRegistry: http://schema-registry:8081
+      schemaRegistryShowNullValues: true
+      schemaRegistryUseFullyQualifiedNames: true
+```
+
+Or as environment variables:
+```
+KAFKA_CLUSTERS_0_SCHEMAREGISTRYSHOWNULLVALUES=true
+KAFKA_CLUSTERS_0_SCHEMAREGISTRYUSEFULLYQUALIFIEDNAMES=true
+```
+
+**Option 2: Explicit serde configuration**
+
+When configuring the SchemaRegistry serde explicitly, set these in the serde properties:
+
+```yaml
+kafka:
+  clusters:
+    - name: Cluster1
+      schemaRegistry: http://schema-registry:8081
+      serde:
+        - name: SchemaRegistry
+          properties:
+            showNullValues: true
+            useFullyQualifiedNames: true
+```
+
+Or as environment variables:
+```
+KAFKA_CLUSTERS_0_SERDE_0_NAME=SchemaRegistry
+KAFKA_CLUSTERS_0_SERDE_0_PROPERTIES_SHOWNULLVALUES=true
+KAFKA_CLUSTERS_0_SERDE_0_PROPERTIES_USEFULLYQUALIFIEDNAMES=true
+```
+
+**Example output**
+
+Given an Avro schema with nullable fields:
+```json
+{
+  "type": "record",
+  "name": "TestRecord",
+  "namespace": "io.kafbat.test",
+  "fields": [
+    {"name": "id", "type": "string"},
+    {"name": "optionalField", "type": ["null", "string"]},
+    {"name": "nested", "type": ["null", {"type": "record", "name": "NestedRecord", "fields": [...]}]}
+  ]
+}
+```
+
+With default settings (`showNullValues: false`, `useFullyQualifiedNames: false`):
+```json
+{
+  "id": "123",
+  "nested": {"NestedRecord": {"value": "test"}}
+}
+```
+
+With `showNullValues: true` and `useFullyQualifiedNames: true`:
+```json
+{
+  "id": "123",
+  "optionalField": null,
+  "nested": {"io.kafbat.test.NestedRecord": {"value": "test"}}
+}
 ```

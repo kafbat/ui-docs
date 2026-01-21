@@ -34,6 +34,8 @@ kafka:
 
       # Schema Registry connection and authentication details
       schemaRegistry: http://schema-registry:8085
+      schemaRegistryShowNullValues: true  # Show null fields in Avro messages (default: false)
+      schemaRegistryUseFullyQualifiedNames: true  # Use full type names in unions (default: false)
       schema-registry-auth:
         username: schema registry username
         password: schema registry password
