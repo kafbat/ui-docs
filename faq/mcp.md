@@ -35,7 +35,8 @@ Claude supports remote MCP servers **only** with an Enterprise subscription. For
       "args": [
         "mcp-remote",
         "http://localhost:8080/mcp/sse",
-        "--transport sse-only",
+        "--transport",
+        "sse-only",
         "--allow-http"
       ]
     }
