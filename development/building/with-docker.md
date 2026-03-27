@@ -26,6 +26,8 @@ A successful build should produce a docker image named `ghcr.io/kafbat/kafka-ui`
 **Using Docker Compose**
 
 * Start the app using docker image built in step 1 along with Kafka clusters:
+* Edit the `./.dev/dev.yaml` and update `image: ghcr.io/kafbat/kafka-ui:<version>`
+  * `<version>` - is the one you just built in the previous step
 
 ```bash
 docker-compose -f ./.dev/dev.yaml up -d
