@@ -126,6 +126,18 @@ A list of all the actions for the corresponding resources (please note neither r
 * `audit`: `view`
 * ~~`client_quotas`: `view`, `edit`~~ — not yet implemented
 
+#### Default Role
+
+The Default Role is applied to users who have successfully authenticated but do not have a mapped role assigned. This role only requires permissions configuration.
+
+```yaml
+rbac:
+  default-role:
+    permissions:
+      - resource: clusterconfig
+        actions: [ "view" ]
+```
+
 ## Example file
 
 **A complete file example:**
@@ -282,6 +294,73 @@ rbac:
 
 ```yaml
 rbac:
+  roles:
+    - name: "admins"
+      clusters:
+        # FILL THIS
+      subjects:
+        # FILL THIS
+      permissions:
+        - resource: applicationconfig
+          actions: all
+
+        - resource: clusterconfig
+          actions: all
+
+        - resource: topic
+          value: ".*"
+          actions: all
+
+        - resource: consumer
+          value: ".*"
+          actions: all
+
+        - resource: schema
+          value: ".*"
+          actions: all
+
+        - resource: connect
+          value: ".*"
+          actions: all
+
+        - resource: ksql
+          actions: all
+
+        - resource: acl
+          actions: [ view ]
+
+```
+
+**An admin group with a read-only default role example:**
+```yaml
+rbac:
+  default-role:
+    permissions:
+      - resource: clusterconfig
+        actions: [ "view" ]
+
+      - resource: topic
+        value: ".*"
+        actions:
+          - VIEW
+          - MESSAGES_READ
+          - ANALYSIS_VIEW
+
+      - resource: consumer
+        value: ".*"
+        actions: [ view ]
+
+      - resource: schema
+        value: ".*"
+        actions: [ view ]
+
+      - resource: connect
+        value: ".*"
+        actions: [ view ]
+
+      - resource: acl
+        actions: [ view ]
+
   roles:
     - name: "admins"
       clusters:
