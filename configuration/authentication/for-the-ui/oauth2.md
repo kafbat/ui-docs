@@ -35,6 +35,25 @@ For specific providers like Github (non-enterprise) and Google ([see the current
 
 Furthermore, other providers that support [OIDC Service Discovery](https://openid.net/specs/openid-connect-discovery-1\_0.html#IssuerDiscovery) allow fetching URIs configuration from a `/.well-known/openid-configuration` endpoint. Depending on your setup, you may only have to set the `issuer-uri` of your provider to enable OIDC Service Discovery.
 
+## Self-signed or private CA certificates
+
+If your OAuth provider (e.g. a self-hosted Keycloak) uses a certificate that isn't trusted by the default JVM truststore, requests to it (issuer discovery, token, user info, JWKS) fail with `PKIX path building failed`. Provide a custom truststore for the OAuth provider connections:
+
+```yaml
+auth:
+  type: OAUTH2
+  oauth2:
+    ssl:
+      truststore-location: file:/etc/certs/truststore.jks # or AUTH_OAUTH2_SSL_TRUSTSTORELOCATION
+      truststore-password: changeit # or AUTH_OAUTH2_SSL_TRUSTSTOREPASSWORD
+    client:
+      # ...
+```
+
+The truststore replaces the default one for OAuth provider connections only, so it has to contain the certificate (or CA) of every OAuth provider you configure.
+
+Note that `server.ssl.trust-store` doesn't apply here: it only configures incoming TLS connections to kafbat-ui itself.
+
 ## Provider config examples
 
 ### Cognito
