@@ -67,6 +67,7 @@ kafka:
 | `KAFKA_CLUSTERS_0_SSL_TRUSTSTOREPASSWORD`             | Password of the JKS truststore for Kafka Connect, SchemaRegistry, KSQL, Metrics                                                                                  |
 | `KAFKA_CLUSTERS_0_SSL_VERIFYSSL`                      | If set to false, SSL certificate of the host won't be verified. True by default.                                                                                 |
 | `KAFKA_CONFIG_SANITIZER_ENABLED`                      | If set to false, disable configuration sanitizer (secret masking)                                                                                                |
+| `KAFKA_CONFIG_SANITIZER_PATTERNS`                     | Non-empty custom patterns replace the default configuration sanitizer patterns; they are not appended. Omit this property to keep the defaults.                  |
 | `TOPIC_RECREATE_DELAY_SECONDS`                        | Time delay between topic deletion and topic creation attempts for topic recreate functionality. Default: 1                                                       |
 | `TOPIC_RECREATE_MAXRETRIES`                           | Number of attempts of topic creation after topic deletion for topic recreate functionality. Default: 15                                                          |
 | `DYNAMIC_CONFIG_ENABLED`                              | Allow to change application config in runtime. Default: false.                                                                                                   |
@@ -75,3 +76,39 @@ kafka:
 | `GITHUB_RELEASE_INFO_ENABLED`                         | Enable automatic check for the latest available release via GitHub API. Default: true                                                                            |
 | `GITHUB_RELEASE_INFO_TIMEOUT`                         | Request timeout for automatic release info checks in seconds. Default: 10                                                                                        |
 | `GITHUB_RELEASE_UPDATE_RATE`                          | Refresh rate (caching time) for release info from GitHub in milliseconds, ISO-8601 (e.g. "PT1H") or simple notation ("1h"). Default: 3600000                     |
+
+## Kafka Connect configuration sanitization
+
+Configuration sanitization is enabled by default. With no custom patterns,
+Kafbat UI masks Kafka SSL/SASL configuration keys whose Kafka type is `PASSWORD`,
+as well as common credential names such as `password`, `secret`, `token`, `key`,
+`passphrase`, and credential patterns for Schema Registry, AWS, and MongoDB.
+
+A non-empty `kafka.config.sanitizer.patterns` list **replaces** those defaults.
+It does not add to them. Include every pattern you want to retain when supplying
+a replacement list. Matching is case-insensitive. Patterns containing `*`, `$`,
+`^`, or `+` are interpreted as regular expressions; other patterns match a key
+ending with the supplied pattern.
+
+The default keyword list does not include `passwd`, `pwd`, or `pass`. A connector
+using those names needs corresponding custom patterns. For example, this
+replacement list covers common credential names and an additional connector
+field; review it against the configuration keys used by your connectors:
+
+```yaml
+kafka:
+  config:
+    sanitizer:
+      patterns:
+        - '.*(password|passwd|pwd|pass|secret|token|key|passphrase)$'
+        - '.*credentials.*'
+        - '.*sasl\.jaas\.config$'
+        - '.*basic\.auth\.user\.info$'
+        - 'aws\.(access|secret|session).*'
+        - '.*connection\.uri$'
+        - '.*custom-sensitive-field$'
+```
+
+This is an explicit replacement list, not a way to extend future defaults.
+Set `kafka.config.sanitizer.enabled: false` only when you intend to disable
+sanitization altogether.
