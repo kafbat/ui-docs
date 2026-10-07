@@ -80,6 +80,45 @@ In this example, we define a role `admins` that will contain all the users with 
           regex: true
 ```
 
+#### Subject matching and identity lifecycle
+
+With `regex: true`, a subject pattern must match the **entire** provider attribute.
+Regular expression metacharacters still have their normal meaning: escape a
+literal dot as `\.`. Use YAML single quotes for patterns containing backslashes
+so YAML preserves them. For example, a Google email subject can be written as:
+
+```yaml
+subjects:
+  - provider: oauth_google
+    type: user
+    value: '^[^@]+@example\.com$'
+    regex: true
+```
+
+The anchors make the intended scope explicit; matching already requires the
+entire string. For a fixed domain, prefer a non-regex domain subject instead:
+
+```yaml
+subjects:
+  - provider: oauth_google
+    type: domain
+    value: 'example.com'
+```
+
+User subjects match the attribute selected by the provider extractor, not a
+universal account ID. The built-in GitHub extractor uses the login name, Google
+uses the email address, and LDAP uses the login username. These identifiers can
+change or be reassigned according to the provider's account lifecycle policy.
+Review and remove stale mappings when an account is renamed or removed, before
+its old identifier can be assigned to another account.
+
+For generic OAuth, user subjects match the principal name selected by
+`user-name-attribute`. Where the identity provider supports it, prefer an
+immutable, non-reassigned account identifier, such as an OIDC `sub` claim, and
+verify that the configured attribute is available to the OAuth principal. Do
+not substitute an account ID into a built-in GitHub, Google, or LDAP user
+subject: those extractors still match the attributes listed above.
+
 #### Providers
 
 A list of supported providers and corresponding subject fetch mechanism:
