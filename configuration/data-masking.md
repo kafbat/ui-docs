@@ -2,6 +2,15 @@
 
 ## Topics data masking
 
+Masking policies apply to deserialized message **keys and values** only. Kafka
+message headers are returned unchanged. Neither `topic-keys-pattern` nor
+`topic-values-pattern` selects headers, and `fields` selects JSON fields inside
+keys or values, not header names. Configuring both topic patterns does not mask
+the entire Kafka record.
+
+If a message header contains data that should not be displayed, remove or redact
+that data before it reaches Kafka, or restrict access to the affected messages.
+
 You can configure kafbat-ui to mask sensitive data shown in Messages page.
 
 Several masking policies supported:
