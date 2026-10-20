@@ -20,6 +20,33 @@ Set up the auth itself first, docs [here](../authentication/for-the-ui/oauth2.md
           value: "zoidberg"
 ```
 
+### OAuth2 resource server (bearer tokens)
+
+Requests with a bearer JWT are matched against `oauth` subjects too. Set the claims to read:
+
+```yaml
+auth:
+  oauth2:
+    resource-server:
+      jwt:
+        jwk-set-uri: https://idp/.well-known/jwks.json
+    resource-server-rbac:
+      username-claim: preferred_username # defaults to sub
+      roles-claim: roles
+```
+
+```yaml
+      subjects:
+        - provider: oauth
+          type: role
+          value: "kafka-ui-admin"
+        - provider: oauth
+          type: user
+          value: "ci-service-account"
+```
+
+Opaque tokens get no roles, only the [default role](README.md#default-role) applies.
+
 ### Google
 
 Set up google auth [first](../authentication/for-the-ui/oauth2.md#google)
