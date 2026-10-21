@@ -22,6 +22,7 @@ kafka:
 | `LOGGING_LEVEL_ROOT`                                  | Setting log level (trace, debug, info, warn, error). Default: info                                                                                               |
 | `LOGGING_LEVEL_IO_KAFBAT_UI`                          | Setting log level (trace, debug, info, warn, error). Default: debug                                                                                              |
 | `SERVER_PORT`                                         | Port for the embedded server. Default: `8080`                                                                                                                    |
+| `MANAGEMENT_SERVER_PORT`                              | Port for actuator endpoints and `/metrics`. When set, `/metrics` is no longer served on `SERVER_PORT`. `/metrics` has no authentication, keep this port internal |
 | `KAFKA_ADMIN-CLIENT-TIMEOUT`                          | Kafka API timeout in ms. Default: `30000`                                                                                                                        |
 | `KAFKA_CLUSTERS_0_NAME`                               | Cluster name                                                                                                                                                     |
 | `KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS`                   | Address where to connect                                                                                                                                         |

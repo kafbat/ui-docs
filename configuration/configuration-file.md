@@ -236,6 +236,8 @@ webclient:
 # Enables health, info, and Prometheus endpoints for monitoring.
 # ======================================================
 management:
+  server:
+    port: 8081  # Optional. Moves actuator endpoints and /metrics off the main port
   endpoint:
     info:
       enabled: true
