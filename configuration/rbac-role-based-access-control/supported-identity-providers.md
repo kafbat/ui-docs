@@ -45,7 +45,7 @@ auth:
           value: "ci-service-account"
 ```
 
-Opaque tokens get no roles, only the [default role](README.md#default-role) applies.
+Opaque tokens are matched the same way, using the claims from the introspection response.
 
 ### Google
 
