@@ -237,7 +237,7 @@ webclient:
 # ======================================================
 management:
   server:
-    port: 8081  # Optional. Moves actuator endpoints and /metrics off the main port
+    port: 8081  # Optional. Separate port for actuator endpoints
   endpoint:
     info:
       enabled: true
@@ -247,6 +247,10 @@ management:
     web:
       exposure:
         include: "info,health,prometheus"
+
+metrics:
+  management-port:
+    enabled: true  # Serve /metrics on management.server.port instead of the main port
 
 # ======================================================
 # Application Logging Configuration
