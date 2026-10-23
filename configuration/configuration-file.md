@@ -190,10 +190,6 @@ auth:
         client-secret:  # Secret used for introspection
         introspection-uri:  # URL to the introspection endpoint
 
-    resource-server-rbac:  # RBAC for bearer JWTs, see Supported Identity Providers
-      username-claim: preferred_username  # Claim matched against "user" subjects, defaults to sub
-      roles-claim: roles  # Claim matched against "role" subjects
-
 # ======================================================
 # LDAP Configuration
 # Used for user and group resolution in RBAC when using LDAP.
