@@ -236,6 +236,8 @@ webclient:
 # Enables health, info, and Prometheus endpoints for monitoring.
 # ======================================================
 management:
+  server:
+    port: 8081  # Optional. Separate port for actuator endpoints
   endpoint:
     info:
       enabled: true
@@ -245,6 +247,10 @@ management:
     web:
       exposure:
         include: "info,health,prometheus"
+
+metrics:
+  management-port:
+    enabled: true  # Serve /metrics on management.server.port instead of the main port
 
 # ======================================================
 # Application Logging Configuration
