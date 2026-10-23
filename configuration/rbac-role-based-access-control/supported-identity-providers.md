@@ -20,6 +20,33 @@ Set up the auth itself first, docs [here](../authentication/for-the-ui/oauth2.md
           value: "zoidberg"
 ```
 
+### OAuth2 resource server (bearer tokens)
+
+Requests with a bearer token are matched against `oauth` subjects too: `user` against the token's principal name, `role` against its authorities. Both come from the standard resource server settings:
+
+```yaml
+auth:
+  oauth2:
+    resource-server:
+      jwt:
+        jwk-set-uri: https://idp/.well-known/jwks.json
+        principal-claim-name: preferred_username # defaults to sub
+        authorities-claim-name: roles # defaults to scope / scp
+        authority-prefix: "" # defaults to SCOPE_
+```
+
+```yaml
+      subjects:
+        - provider: oauth
+          type: role
+          value: "kafka-ui-admin"
+        - provider: oauth
+          type: user
+          value: "ci-service-account"
+```
+
+Opaque tokens use the introspected `sub` and `scope`, so a scope `kafka-ui-admin` is matched as `SCOPE_kafka-ui-admin`.
+
 ### Google
 
 Set up google auth [first](../authentication/for-the-ui/oauth2.md#google)
