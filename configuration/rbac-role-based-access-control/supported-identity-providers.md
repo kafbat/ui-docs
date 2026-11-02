@@ -22,7 +22,7 @@ Set up the auth itself first, docs [here](../authentication/for-the-ui/oauth2.md
 
 ### OAuth2 resource server (bearer tokens)
 
-Requests with a bearer token are matched against `oauth` subjects too: `user` against the token's principal name, `role` against its authorities. Both come from the standard resource server settings:
+Requests with a bearer token are matched against `oauth` subjects too: `user` against the token's principal name, `role` against its authorities. For JWTs, both come from the standard resource server settings:
 
 ```yaml
 auth:
@@ -32,6 +32,7 @@ auth:
         jwk-set-uri: https://idp/.well-known/jwks.json
         principal-claim-name: preferred_username # defaults to sub
         authorities-claim-name: roles # defaults to scope / scp
+        authorities-claim-delimiter: "," # for a string claim, defaults to a space
         authority-prefix: "" # defaults to SCOPE_
 ```
 
@@ -45,7 +46,9 @@ auth:
           value: "ci-service-account"
 ```
 
-Opaque tokens use the introspected `sub` and `scope`, so a scope `kafka-ui-admin` is matched as `SCOPE_kafka-ui-admin`.
+A token without the `principal-claim-name` claim matches no `user` subject, not even one set to its `sub`.
+
+The `jwt` settings don't apply to opaque tokens: `user` is matched against the introspected `sub`, and each entry of the space-separated `scope` becomes `SCOPE_<scope>`, so a scope `kafka-ui-admin` is matched as `SCOPE_kafka-ui-admin`.
 
 ### Google
 

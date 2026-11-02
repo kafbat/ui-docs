@@ -177,7 +177,7 @@ auth:
       jwt:
         jwk-set-uri: http://jwk/uri
         jws-algorithms: ["RS256"]
-        issuer-uri: http://issuer/uri
+        issuer-uri:  # Optional. If set, must equal the token's iss claim
         public-key-location:  # Optional path to JWT public key
         audiences: []  # List of accepted audience values in JWT
         authority_prefix:  # Optional prefix added to authorities
